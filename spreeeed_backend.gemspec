@@ -5,7 +5,7 @@ require "spreeeed_backend/version"
 
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
-  s.name        = "Spreeeed Backend"
+  s.name        = "spreeeed_backend"
   s.version     = SpreeeedBackend::VERSION
   s.authors     = ["Bruce Sung"]
   s.email       = ["isfore@gmail.com"]
