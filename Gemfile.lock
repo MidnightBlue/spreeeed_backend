@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    Spreeeed Backend (0.0.1)
+    spreeeed_backend (0.0.1)
       jquery-rails
       rails (~> 3.2.21)
       rails-assets-bootstrap
@@ -97,4 +97,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  Spreeeed Backend!
+  jquery-rails
+  rails-assets-bootstrap
+  spreeeed_backend!
