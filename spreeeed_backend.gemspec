@@ -20,5 +20,6 @@ Gem::Specification.new do |s|
   s.add_dependency "jquery-rails"
   s.add_dependency "rails-assets-bootstrap"
 
-  s.add_development_dependency "sqlite3"
+  # s.add_development_dependency "rails-assets-bootstrap"
+  # s.add_development_dependency "sqlite3"
 end
