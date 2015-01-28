@@ -1,8 +1,10 @@
 PATH
   remote: .
   specs:
-    spreeeed_backend (0.0.1)
+    Spreeeed Backend (0.0.1)
+      jquery-rails
       rails (~> 3.2.21)
+      rails-assets-bootstrap
 
 GEM
   remote: https://rubygems.org/
@@ -96,7 +98,5 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  jquery-rails
-  rails-assets-bootstrap
-  spreeeed_backend!
+  Spreeeed Backend!
   sqlite3
