@@ -1,0 +1,22 @@
+<body>
+<div id="cl-wrapper">
+  <div class="cl-sidebar">
+    <%# render :partial => 'layouts/sidebar' %>
+  </div>
+
+  <div class="container-fluid" id="pcont">
+    <div id="head-nav" class="navbar navbar-default">
+      <!--Top Bar-->
+    </div>
+
+    <div class="cl-mcont">
+      <!--Content-->
+      <%= yield %>
+    </div>
+  </div>
+</div>
+
+<%# render :partial => 'layouts/load_js' %>
+</body>
+
+<%= parent_layout 'layouts/spreeeed_backend/application' %>
