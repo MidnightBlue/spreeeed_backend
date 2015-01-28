@@ -7,10 +7,9 @@ source 'https://rails-assets.org'
 gemspec
 
 group :assets do
-#   # jquery-rails is used by the dummy application
+  # jquery-rails is used by the dummy application
   gem "jquery-rails"
 
-  gem 'rails-assets-bootstrap'
 end
 
 # Declare any dependencies that are still in development here instead of in

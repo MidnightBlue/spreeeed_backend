@@ -3,4 +3,4 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require bootstrap
+//= require spreeeed_backend/bootstrap/dist/js/bootstrap.js
