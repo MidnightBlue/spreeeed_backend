@@ -11,6 +11,10 @@ module SpreeeedBackend
       self.output_buffer = render(:file => "layouts/#{layout}")
     end
 
+    def current_user_name
+      current_user.respond_to?(:name) ? current_user.name : current_user.email
+    end
+
     def search_box_placeholder(klass, searchable_cols)
       res = t('search') + searchable_cols.collect do |col|
         klass.human_attribute_name(col.to_sym)
