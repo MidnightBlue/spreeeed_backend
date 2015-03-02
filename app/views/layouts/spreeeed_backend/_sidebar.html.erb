@@ -1,0 +1,22 @@
+<div class="cl-toggle"><i class="fa fa-bars"></i></div>
+<div class="cl-navblock">
+  <div class="menu-space">
+    <div class="content">
+      <div class="sidebar-logo">
+        <div class="logo">
+          <%# link_to(image_tag('/static-assets/images/banner.jpg', {:width => 200}), admin_root_url) %>
+        </div>
+      </div>
+      <div class="side-user">
+        <div class="avatar"><%# user_avatar(current_user, {:width => 50, :height => 50}) %></div>
+        <div class="info">
+          <p><%= current_user.name %></p>
+          <p><%= link_to(t('sign_out'), destroy_user_session_path, :method => :delete) %>
+        </div>
+      </div>
+      <ul class="cl-vnavigation">
+        <%= render_role_menu %>
+      </ul>
+    </div>
+  </div>
+</div>
