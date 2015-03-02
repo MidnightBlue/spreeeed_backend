@@ -1,3 +1,8 @@
 = SpreeeedBackend
 
+1. run bundle exec rails generate devise:install
+2. run
+
+
+
 This project rocks and uses MIT-LICENSE.
