@@ -1,7 +1,7 @@
 <%
    klass_name_underscore = @klass_name.underscore
-   new_object_path       = send("new_backend_#{klass_name_underscore}_path")
-   objects_path         = send("backend_#{klass_name_underscore.pluralize}_path")
+   new_object_path       = send("new_#{SpreeeedBackend.name_space}_#{klass_name_underscore}_path")
+   objects_path         = send("#{SpreeeedBackend.name_space}_#{klass_name_underscore.pluralize}_path")
 %>
 <div class="row">
   <div class="col-md-12">
@@ -34,7 +34,7 @@
 <% if @klass_name %>
     <%
        klass_name_underscore  = @klass_name.underscore
-       objects_path_with_json = send("backend_#{klass_name_underscore.pluralize}_path", {:format => :json})
+       objects_path_with_json = send("#{SpreeeedBackend.name_space}_#{klass_name_underscore.pluralize}_path", {:format => :json})
     %>
     <script type="text/javascript">
         function build_datatable(id, path, placeholder) {

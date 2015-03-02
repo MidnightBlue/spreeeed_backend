@@ -99,7 +99,7 @@ module SpreeeedBackend
       @object.destroy
 
       respond_to do |format|
-        format.html { redirect_to send("backend_#{@klass_name.underscore.pluralize}_url") }
+        format.html { redirect_to send("#{SpreeeedBackend.name_space}_#{@klass_name.underscore.pluralize}_url") }
         format.json { head :no_content }
       end
     end
@@ -115,7 +115,7 @@ module SpreeeedBackend
         object_name = object.class.to_s.underscore
         value       = object.send(attr.to_sym)
         if [:name, :title, :subject, :content].include?(attr.to_sym)
-          object_path = self.send("backend_#{object_name}_path", object.id)
+          object_path = self.send("#{SpreeeedBackend.name_space}_#{object_name}_path", object.id)
           view_context.link_to(value, object_path, {:target => '_blank'})
         elsif (attr.to_sym == :avatar)
           avatar = view_context.send("#{object_name}_avatar", object, {:width => 50, :height => 50})
@@ -127,19 +127,6 @@ module SpreeeedBackend
           %Q|<div class="img">#{view_context.link_to(cover, object_path, {:target => '_blank'})}</div>|
         elsif (attr.to_sym == :pi_type)
           view_context.t(value)
-        elsif value.kind_of?(Entity)
-          object_path = self.send("backend_entity_path", value)
-          view_context.link_to(value.send(:name), object_path, {:target => '_blank'})
-        elsif value.kind_of?(Author)
-          object_path = self.send("backend_#{object_name}_path", object.id)
-          view_context.link_to(value.send(:name), object_path, {:target => '_blank'})
-        elsif value.kind_of?(Warehouse)
-          object_path = self.send("backend_#{object_name}_path", object.id)
-          view_context.link_to(value.send(:name), object_path, {:target => '_blank'})
-        elsif value.kind_of?(WorkPhoto)
-          photo = view_context.send("image_tag", value.filename.url(:square), {:width => 50, :height => 63})
-          object_path = self.send("backend_#{object_name}_path", object.id)
-          %Q|<div class="img">#{view_context.link_to(photo, object_path, {:target => '_blank'})}</div>|
         elsif value.kind_of?(Date)
           value.strftime("%Y/%m/%d")
           # view_context.send(attr, object)
