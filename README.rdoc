@@ -6,6 +6,13 @@
 3. run bundle exec rake db:migrate
 4. run bundle exec rails s
 
+= Create config
+1. create a file config/initializers/spreeeed_backend.rb
+
+SpreeeedBackend.setup do |config|
+    config.name_space = "admin" # default is backend
+end
+
 = Add a user
 1. create user account: http://localhost:3000/users/sign_up
 
