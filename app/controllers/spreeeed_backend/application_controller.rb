@@ -44,5 +44,196 @@ module SpreeeedBackend
       end
     end
 
+    def show
+      @object = @klass.find(params[:id])
+
+      respond_to do |format|
+        format.html # show.html.erb
+        format.json { render json: @object }
+      end
+    end
+
+    def new
+      @object = @klass.new
+
+      respond_to do |format|
+        format.html # new.html.erb
+        format.json { render json: @object }
+      end
+    end
+
+    def edit
+      @object = @klass.find(params[:id])
+    end
+
+    def create
+      @object = @klass.new(params[@klass_name.underscore.to_sym])
+
+      respond_to do |format|
+        if @object.save
+          format.html { redirect_to [:backend, @object], notice: "#{@klass_name} was successfully created." }
+          format.json { render json: @object, status: :created, location: @object }
+        else
+          format.html { render action: "new" }
+          format.json { render json: @object.errors, status: :unprocessable_entity }
+        end
+      end
+    end
+
+    def update
+      @object = @klass.find(params[:id])
+
+      respond_to do |format|
+        if @object.update_attributes(params[@klass_name.underscore.to_sym])
+          format.html { redirect_to [:backend, @object], notice: "#{@klass_name} was successfully updated." }
+          format.json { head :no_content }
+        else
+          format.html { render action: "edit" }
+          format.json { render json: @object.errors, status: :unprocessable_entity }
+        end
+      end
+    end
+
+    def destroy
+      @object = @klass.find(params[:id])
+      @object.destroy
+
+      respond_to do |format|
+        format.html { redirect_to send("backend_#{@klass_name.underscore.pluralize}_url") }
+        format.json { head :no_content }
+      end
+    end
+
+
+
+
+
+    protected
+
+    def datatable_value(object, attr)
+      if object.id.present?
+        object_name = object.class.to_s.underscore
+        value       = object.send(attr.to_sym)
+        if [:name, :title, :subject, :content].include?(attr.to_sym)
+          object_path = self.send("backend_#{object_name}_path", object.id)
+          view_context.link_to(value, object_path, {:target => '_blank'})
+        elsif (attr.to_sym == :avatar)
+          avatar = view_context.send("#{object_name}_avatar", object, {:width => 50, :height => 50})
+          object_path = self.send("#{object_name}_path", object.id)
+          %Q|<div class="img">#{view_context.link_to(avatar, object_path, {:target => '_blank'})}</div>|
+        elsif (attr.to_sym == :cover)
+          cover = view_context.send("#{object_name}_cover", object, {:width => 50, :height => 63})
+          object_path = self.send("#{object_name}_path", object.id)
+          %Q|<div class="img">#{view_context.link_to(cover, object_path, {:target => '_blank'})}</div>|
+        elsif (attr.to_sym == :pi_type)
+          view_context.t(value)
+        elsif value.kind_of?(Entity)
+          object_path = self.send("backend_entity_path", value)
+          view_context.link_to(value.send(:name), object_path, {:target => '_blank'})
+        elsif value.kind_of?(Author)
+          object_path = self.send("backend_#{object_name}_path", object.id)
+          view_context.link_to(value.send(:name), object_path, {:target => '_blank'})
+        elsif value.kind_of?(Warehouse)
+          object_path = self.send("backend_#{object_name}_path", object.id)
+          view_context.link_to(value.send(:name), object_path, {:target => '_blank'})
+        elsif value.kind_of?(WorkPhoto)
+          photo = view_context.send("image_tag", value.filename.url(:square), {:width => 50, :height => 63})
+          object_path = self.send("backend_#{object_name}_path", object.id)
+          %Q|<div class="img">#{view_context.link_to(photo, object_path, {:target => '_blank'})}</div>|
+        elsif value.kind_of?(Date)
+          value.strftime("%Y/%m/%d")
+          # view_context.send(attr, object)
+        elsif value.kind_of?(Integer)
+          view_context.number_with_delimiter(value)
+        elsif value.kind_of?(TrueClass)
+          view_context.yes_or_no(value)
+        elsif value.kind_of?(FalseClass)
+          view_context.yes_or_no(value)
+        elsif value.kind_of?(Time)
+          value.strftime("%Y/%m/%d %H:%M")
+        else
+          value
+        end
+      else
+        nil
+      end
+    end
+
+    def render_sortable_cols(klass, attrs)
+      sortable_cols = []
+      if klass.sortable_cols.kind_of?(ActiveSupport::OrderedHash)
+        sortable_cols = klass.sortable_cols.collect { |label, _attrs| _attrs }.flatten
+      elsif klass.sortable_cols.kind_of?(Array)
+        sortable_cols = klass.sortable_cols
+      else
+
+      end
+
+      Rails.logger.debug("==== #{sortable_cols.inspect}")
+
+      res = attrs.collect { |attr|
+        {'bSortable' => sortable_cols.include?(attr)}
+      }
+      Rails.logger.debug("==== #{res}")
+      res
+    end
+
+    def datatable_cols(object, attrs)
+      datatable_mapping(object, attrs).collect{ |col| col[:label]}
+    end
+
+    def datatable_col_defs(object, attrs)
+      res = []
+      attrs.each do |attr|
+        res << {
+            :sTitle    => object.class.human_attribute_name(attr.to_sym),
+            :bSortable => datatable_sortable(object, attr),
+        }
+      end
+    end
+
+    def datatable_mapping(object, attrs)
+      res = []
+      attrs.each do |attr|
+        res << {
+            :label => object.class.human_attribute_name(attr.to_sym),
+            :attr  => attr,
+            :value => datatable_value(object, attr),
+        }
+      end
+
+      res
+    end
+
+    def searchable_conditions(searchable_cols, q)
+      res        = []
+      conditions = []
+      searchable_cols.each do |col|
+        conditions << "#{col} LIKE ?"
+        res << "%#{q}%"
+      end
+      [conditions.join(' OR ')] + res
+    end
+
+    def render_datatable_data(objects, attrs, page, total)
+      i = (page.to_i - 1) * 10
+
+      # aoColumns = []
+      aaData = objects.collect{ |object|
+        datatable_mapping(object, attrs).collect do |col|
+          col[:value]
+        end
+        # aoColumns = datatable_col_defs(object, attrs) if aoColumns.empty?
+      }
+
+      {
+          "sEcho"                => params[:sEcho],
+          "iTotalRecords"        => total,
+          "iTotalDisplayRecords" => total,
+          "aaData"               => aaData,
+          # "aoColumns"            => aoColumns,
+      }
+    end
+
   end
 end
