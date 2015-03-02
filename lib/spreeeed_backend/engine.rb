@@ -4,11 +4,7 @@ module SpreeeedBackend
   class Engine < ::Rails::Engine
     isolate_namespace SpreeeedBackend
 
-    config.to_prepare do
-      Dir.glob(Rails.root + "app/decorators/*.rb").each do |c|
-        require_dependency(c)
-      end
-    end
+    config.autoload_paths << File.expand_path("../lib/spreeeed_backend/active_record_extension", __FILE__)
 
   end
 end
