@@ -4,7 +4,11 @@ module SpreeeedBackend
   class Engine < ::Rails::Engine
     isolate_namespace SpreeeedBackend
 
-    require_dependency 'lib/spreeeed_backend/active_record_extension'
+    config.to_prepare do
+      Dir.glob(Rails.root + "app/decorators/*.rb").each do |c|
+        require_dependency(c)
+      end
+    end
 
   end
 end
