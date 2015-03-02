@@ -4,6 +4,7 @@ module SpreeeedBackend
   class Engine < ::Rails::Engine
     isolate_namespace SpreeeedBackend
 
-    require 'active_record_extension'
+    require 'lib/spreeeed_backend/active_record_extension'
+
   end
 end
