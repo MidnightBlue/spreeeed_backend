@@ -18,6 +18,9 @@ Gem::Specification.new do |s|
 
   s.add_dependency "rails", "~> 3.2.21"
   s.add_dependency "jquery-rails"
+  s.add_dependency "devise", "3.0.3"
+
+
   # s.add_dependency "rails-assets-bootstrap"
 
   # s.add_development_dependency "rails-assets-bootstrap"
