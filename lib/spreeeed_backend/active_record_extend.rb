@@ -10,6 +10,10 @@ module ActiveRecordExtension
   # add your static(class) methods here
   module ClassMethods
 
+    def icon
+      'fa-pencil'
+    end
+
     def displayable_cols
       self.new.attributes.keys - self.protected_attributes.to_a
     end
