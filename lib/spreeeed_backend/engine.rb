@@ -1,6 +1,5 @@
 module SpreeeedBackend
   require 'devise'
-  require 'spreeeed_backend/active_record_extend'
 
   class Engine < ::Rails::Engine
     isolate_namespace SpreeeedBackend
