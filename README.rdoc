@@ -5,7 +5,33 @@
 2. run bundle exec rails generate devise User
 3. run bundle exec rake db:migrate
 4. run bundle exec rails s
-5. create user account: http://localhost:3000/users/sign_up
+
+= Add a user
+1. create user account: http://localhost:3000/users/sign_up
+
+= Generate backend controller
+1. run bundle exec rails generate controller admin/users
+2. edit app/controllers/admin/users_controller.rb
+
+class Admin::UsersController < SpreeeedBackend::ApplicationController
+
+  def setup_global_variables
+    @klass = User
+
+    @attrs           = [:email]
+    @searchable_cols = [:email]
+
+    super
+  end
+
+end
+
+3. edit routes.rb
+
+  namespace :admin do
+    resources :users
+  end
+
 
 
 This project rocks and uses MIT-LICENSE.
