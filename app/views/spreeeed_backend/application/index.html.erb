@@ -1,1 +1,80 @@
-<p>Hello World</p>
+<%
+   klass_name_underscore = @klass_name.underscore
+   new_object_path       = send("new_backend_#{klass_name_underscore}_path")
+   objects_path         = send("backend_#{klass_name_underscore.pluralize}_path")
+%>
+<div class="row">
+  <div class="col-md-12">
+    <div class="block-flat">
+
+      <div class="header">
+        <h3><i class="fa <%= @klass.icon %>"></i> <%= @klass.model_name.human %></h3>
+      </div>
+
+      <div class="content">
+        <div class="table-responsive">
+          <div role="grid" class="dataTables_wrapper form-inline" id="datatable_wrapper">
+
+            <%= render :partial => 'datatable', :locals => {:datatable_id => @datatable_id, :datatable_cols => @datatable_cols} %>
+
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="pull-left">
+                  <%= link_to("#{t('new')}#{@klass.model_name.human}", new_object_path, :class => "btn btn-primary") %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<% if @klass_name %>
+    <%
+       klass_name_underscore  = @klass_name.underscore
+       objects_path_with_json = send("backend_#{klass_name_underscore.pluralize}_path", {:format => :json})
+    %>
+    <script type="text/javascript">
+        function build_datatable(id, path, placeholder) {
+            $("#" + id).dataTable({
+                bProcessing: true,
+                oLanguage: {
+                    sProcessing: '<img src="/static-assets/images/ajax-loader.gif">',
+                    sLengthMenu:   "顯示 _MENU_ 項結果",
+                    sZeroRecords:  "沒有匹配結果",
+                    sInfo:         "顯示第 _START_ 至 _END_ 項結果，共 _TOTAL_ 項",
+                    sInfoEmpty:    "顯示第 0 至 0 項結果，共 0 項",
+                    sInfoFiltered: "(從 _MAX_ 項結果過濾)",
+                    sInfoPostFix:  "",
+                    sSearch:       "搜索:",
+                    sUrl:          "",
+                    oPaginate: {
+                        sFirst:    "首頁",
+                        sPrevious: "上頁",
+                        sNext:     "下頁",
+                        sLast:     "尾頁",
+                    },
+                },
+                bServerSide: true,
+                sAjaxSource: path,
+                aoColumns: <%= @sortable_cols.to_json.html_safe %>
+            });
+
+            //Search input style
+            if ($("#" + id).length > 0) {
+                $('.dataTables_filter input').addClass('form-control').attr('placeholder', placeholder);
+                $('.dataTables_length select').addClass('form-control');
+                // $('#' + id + ' tbody tr td').attr('style', 'vertical-align:middle;');
+
+            }
+        }
+
+        $(document).ready(function(){
+
+            build_datatable('<%= @datatable_id %>', '<%= objects_path_with_json %>', '<%= search_box_placeholder(@klass, @searchable_cols) %>');
+
+        });
+    </script>
+<% end %>
