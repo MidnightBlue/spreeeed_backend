@@ -5,7 +5,7 @@ module SpreeeedBackend
       menu = ''
 
       items =
-          if current_user.is_root?
+          if current_user_is_root?
             root_menu
           end
 

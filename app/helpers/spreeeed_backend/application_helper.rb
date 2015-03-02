@@ -15,6 +15,10 @@ module SpreeeedBackend
       current_user.respond_to?(:name) ? current_user.name : current_user.email
     end
 
+    def current_user_is_root?
+      current_user.respond_to?('is_root?'.to_sym) ? current_user.is_root? : true
+    end
+
     def search_box_placeholder(klass, searchable_cols)
       res = t('search') + searchable_cols.collect do |col|
         klass.human_attribute_name(col.to_sym)
