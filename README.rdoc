@@ -1,8 +1,11 @@
 = SpreeeedBackend
 
+= INSTALL Devise
 1. run bundle exec rails generate devise:install
-2. run
-
+2. run bundle exec rails generate devise User
+3. run bundle exec rake db:migrate
+4. run bundle exec rails s
+5. create user account: http://localhost:3000/users/sign_up
 
 
 This project rocks and uses MIT-LICENSE.
