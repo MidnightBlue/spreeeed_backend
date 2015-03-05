@@ -117,16 +117,6 @@ module SpreeeedBackend
         if [:name, :title, :subject, :content].include?(attr.to_sym)
           object_path = self.send("#{SpreeeedBackend.name_space}_#{object_name}_path", object.id)
           view_context.link_to(value, object_path, {:target => '_blank'})
-        elsif (attr.to_sym == :avatar)
-          avatar = view_context.send("#{object_name}_avatar", object, {:width => 50, :height => 50})
-          object_path = self.send("#{object_name}_path", object.id)
-          %Q|<div class="img">#{view_context.link_to(avatar, object_path, {:target => '_blank'})}</div>|
-        elsif (attr.to_sym == :cover)
-          cover = view_context.send("#{object_name}_cover", object, {:width => 50, :height => 63})
-          object_path = self.send("#{object_name}_path", object.id)
-          %Q|<div class="img">#{view_context.link_to(cover, object_path, {:target => '_blank'})}</div>|
-        elsif (attr.to_sym == :pi_type)
-          view_context.t(value)
         elsif value.kind_of?(Date)
           value.strftime("%Y/%m/%d")
           # view_context.send(attr, object)
