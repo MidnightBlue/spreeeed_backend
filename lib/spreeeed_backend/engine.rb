@@ -15,6 +15,7 @@ module SpreeeedBackend
 
   class Engine < ::Rails::Engine
     config.autoload_paths += Dir["#{config.root}/lib/**/"]
+    config.autoload_paths += Dir["#{config.root}/config/locales/**/"]
 
     isolate_namespace SpreeeedBackend
   end
