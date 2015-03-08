@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="54d12f9b-d279-46f4-8594-d486b3547a92" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.rdoc" afterPath="$PROJECT_DIR$/README.rdoc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/spreeeed_backend.iml" afterPath="$PROJECT_DIR$/.idea/spreeeed_backend.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="spreeeed_backend.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -94,21 +92,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="spreeeed_backend.gemspec" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/spreeeed_backend.gemspec">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="540">
-              <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="README.rdoc" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.rdoc">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.87603307" vertical-offset="251" max-vertical-offset="795">
-              <caret line="45" column="2" selection-start-line="45" selection-start-column="2" selection-end-line="45" selection-end-column="2" />
+            <state vertical-scroll-proportion="0.8140496" vertical-offset="251" max-vertical-offset="795">
+              <caret line="43" column="46" selection-start-line="43" selection-start-column="46" selection-end-line="43" selection-end-column="46" />
               <folding />
             </state>
           </provider>
@@ -1025,14 +1013,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/spreeeed_backend/engine.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="405">
-          <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Gemfile.lock">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.36983472" vertical-offset="406" max-vertical-offset="1800">
@@ -1043,16 +1023,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/spreeeed_backend.gemspec">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="540">
+        <state vertical-scroll-proportion="0.6818182" vertical-offset="0" max-vertical-offset="540">
           <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/spreeeed_backend/engine.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="405">
+          <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/README.rdoc">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.87603307" vertical-offset="251" max-vertical-offset="795">
-          <caret line="45" column="2" selection-start-line="45" selection-start-column="2" selection-end-line="45" selection-end-column="2" />
+        <state vertical-scroll-proportion="0.8140496" vertical-offset="251" max-vertical-offset="795">
+          <caret line="43" column="46" selection-start-line="43" selection-start-column="46" selection-end-line="43" selection-end-column="46" />
           <folding />
         </state>
       </provider>
