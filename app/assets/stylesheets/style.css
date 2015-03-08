@@ -929,7 +929,7 @@ display:block !important;
 }
 .sidebar-logo {
     /* background: #7761a7 url(../images/logo.png) no-repeat 15px 19px; */
-    background: #7761a7 url(../../static-assets/images/banner2.png) no-repeat;
+    /* background: #7761a7 url(../../static-assets/images/banner2.png) no-repeat; */
     padding: 15px 20px;
     display: block;
     height: 64px;
