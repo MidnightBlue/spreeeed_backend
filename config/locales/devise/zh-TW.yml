@@ -1,6 +1,4 @@
-# Additional translations at https://github.com/plataformatec/devise/wiki/I18n
-# zh-TW.devise.user_registrations.user.updated
-
+---
 zh-TW:
   devise:
     confirmations:

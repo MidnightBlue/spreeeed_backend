@@ -1,3 +1,4 @@
+---
 'zh-TW':
   will_paginate:
     previous_label: '<span class="fa fa-angle-left"></span> 上一頁'
