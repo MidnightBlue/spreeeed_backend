@@ -41,7 +41,7 @@
             $("#" + id).dataTable({
                 bProcessing: true,
                 oLanguage: {
-                    sProcessing: '<img src="/static-assets/images/ajax-loader.gif">',
+                    sProcessing: '<%= image_tag("spreeeed_backend/ajax-loader.gif") %>',
                     sLengthMenu:   "顯示 _MENU_ 項結果",
                     sZeroRecords:  "沒有匹配結果",
                     sInfo:         "顯示第 _START_ 至 _END_ 項結果，共 _TOTAL_ 項",
