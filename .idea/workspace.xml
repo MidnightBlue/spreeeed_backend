@@ -2,14 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="54d12f9b-d279-46f4-8594-d486b3547a92" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/locales/default/en.yml" afterPath="$PROJECT_DIR$/config/locales/default/en.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/locales/devise/en.yml" afterPath="$PROJECT_DIR$/config/locales/devise/en.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/spreeeed_backend/engine.rb" afterPath="$PROJECT_DIR$/lib/spreeeed_backend/engine.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/locales/default/will_paginate.yml" afterPath="$PROJECT_DIR$/config/locales/default/will_paginate.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/locales/default/will_paginate.zh-TW.yml" afterPath="$PROJECT_DIR$/config/locales/default/will_paginate.zh-TW.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile.lock" afterPath="$PROJECT_DIR$/Gemfile.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/index.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spreeeed_backend.gemspec" afterPath="$PROJECT_DIR$/spreeeed_backend.gemspec" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/spreeeed_backend.iml" afterPath="$PROJECT_DIR$/.idea/spreeeed_backend.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/locales/default/zh-TW.yml" afterPath="$PROJECT_DIR$/config/locales/default/zh-TW.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/locales/devise/zh-TW.yml" afterPath="$PROJECT_DIR$/config/locales/devise/zh-TW.yml" />
     </list>
     <ignored path="spreeeed_backend.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,11 +34,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="engine.rb" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/lib/spreeeed_backend/engine.rb">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/assets/javascripts/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.65082645" vertical-offset="0" max-vertical-offset="525">
-              <caret line="21" column="74" selection-start-line="21" selection-start-column="74" selection-end-line="21" selection-end-column="74" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="195">
+              <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="spreeeed_backend.gemspec" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/spreeeed_backend.gemspec">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.83677685" vertical-offset="0" max-vertical-offset="555">
+              <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -75,7 +84,6 @@
         <option value="$PROJECT_DIR$/app/views/layouts/spreeeed_backend/application.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/index.css" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/style.css" />
-        <option value="$PROJECT_DIR$/spreeeed_backend.gemspec" />
         <option value="$PROJECT_DIR$/README.rdoc" />
         <option value="$PROJECT_DIR$/lib/spreeeed_backend/engine.rb" />
         <option value="$PROJECT_DIR$/config/locales/default/en.yml" />
@@ -84,6 +92,8 @@
         <option value="$PROJECT_DIR$/config/locales/default/zh-TW.yml" />
         <option value="$PROJECT_DIR$/config/locales/devise/en.yml" />
         <option value="$PROJECT_DIR$/config/locales/devise/zh-TW.yml" />
+        <option value="$PROJECT_DIR$/app/assets/javascripts/index.js" />
+        <option value="$PROJECT_DIR$/spreeeed_backend.gemspec" />
       </list>
     </option>
   </component>
@@ -388,6 +398,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="stylesheets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="spreeeed_backend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="spreeeed_backend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="javascripts" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -863,16 +895,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="180">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/spreeeed_backend/backend.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.097402595" vertical-offset="0" max-vertical-offset="462">
@@ -908,14 +930,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.36983472" vertical-offset="406" max-vertical-offset="1800">
           <caret line="39" column="9" selection-start-line="39" selection-start-column="6" selection-end-line="39" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spreeeed_backend.gemspec">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6818182" vertical-offset="0" max-vertical-offset="540">
-          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1004,6 +1018,24 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.65082645" vertical-offset="0" max-vertical-offset="525">
           <caret line="21" column="74" selection-start-line="21" selection-start-column="74" selection-end-line="21" selection-end-column="74" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="195">
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spreeeed_backend.gemspec">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.83677685" vertical-offset="0" max-vertical-offset="555">
+          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
           <folding />
         </state>
       </provider>
