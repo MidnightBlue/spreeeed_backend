@@ -8,7 +8,18 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
- *= require_self
  *= require ../javascripts/spreeeed_backend/bootstrap/dist/css/bootstrap
- *= require_tree .
+ *= require ../javascripts/spreeeed_backend/jquery.gritter/css/jquery.gritter
+ *= require ../javascripts/spreeeed_backend/jasny.bootstrap/extend/css/jasny-bootstrap.css
+ *= require ../javascripts/spreeeed_backend/jquery.datatables/bootstrap-adapter/css/datatables
+ *= require ../javascripts/spreeeed_backend/bootstrap.datetimepicker/css/bootstrap-datetimepicker.css
+ *= require ../javascripts/spreeeed_backend/bootstrap.daterangepicker/daterangepicker-bs3
+ *= require ../javascripts/spreeeed_backend/bootstrap.switch/bootstrap-switch.css
+ *= require ../javascripts/spreeeed_backend/jquery.icheck/skins/flat/grey.css
+ *= require ../javascripts/spreeeed_backend/jquery.select2/select2-bootstrap
+ *= require ../javascripts/spreeeed_backend/bootstrap.typeahead/twitter_typeahead
+ *= require ../javascripts/spreeeed_backend/fuelux/css/fuelux.css
+ *= require ../javascripts/spreeeed_backend/fuelux/css/fuelux-responsive.css
+ *= require ../javascripts/spreeeed_backend/jquery.nanoscroller/nanoscroller
+ *= require style
  */
