@@ -1,0 +1,36 @@
+<%
+  klass_name_underscore = @klass_name.underscore
+
+  edit_object_path = send("edit_backend_#{klass_name_underscore}_path", @object)
+  object_path      = send("backend_#{klass_name_underscore}_path", @object)
+  objects_path     = send("backend_#{klass_name_underscore.pluralize}_path")
+%>
+<div class="row">
+  <div class="col-md-5">
+    <div class="block-flat">
+      <div class="header">
+        <h3><%= @object.name %></h3>
+      </div>
+      <div class="content">
+        <table class="no-border hover">
+          <tbody class="no-border-y">
+<% @displayable_cols.each do |attr| %>
+            <tr>
+              <td><%= @klass.human_attribute_name(attr.to_sym) %></td>
+              <td class="text-right"><%= display_attribute(@object, attr) %></td>
+            </tr>
+<% end %>
+          </tbody>
+        </table>
+        <div class="content">
+          <%= link_to(edit_label, edit_object_path, :class => "btn btn-primary") %>
+          <%= link_to(destroy_label, object_path, :confirm => "#{t('destroy')}#{@object.name}?", :method => :delete, :class => "btn btn-danger pull-right") %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+
+<%= link_to t('back'), objects_path %>
