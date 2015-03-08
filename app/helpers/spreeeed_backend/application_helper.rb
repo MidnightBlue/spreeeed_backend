@@ -1,8 +1,8 @@
 module SpreeeedBackend
   module ApplicationHelper
-    # include Backend::DisplayAttributeHelper
     include SpreeeedBackend::MenuHelper
     include SpreeeedBackend::InputHelper
+    include SpreeeedBackend::DisplayAttributeHelper
 
 
     def parent_layout(layout)
