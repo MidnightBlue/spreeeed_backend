@@ -1,5 +1,5 @@
 <%
-  objects_path = send("backend_#{@klass_name.underscore.pluralize}_path")
+  objects_path = send("#{SpreeeedBackend.name_space}_#{@klass_name.underscore.pluralize}_path")
 
 %>
 <div class="row">

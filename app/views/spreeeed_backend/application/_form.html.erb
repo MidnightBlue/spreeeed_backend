@@ -1,8 +1,8 @@
 <%
   if object.id
-    objects_path = send("backend_#{klass_name.underscore}_path", object)
+    objects_path = send("#{SpreeeedBackend.name_space}_#{klass_name.underscore}_path", object)
   else
-    objects_path = send("backend_#{klass_name.underscore.pluralize}_path")
+    objects_path = send("#{SpreeeedBackend.name_space}_#{klass_name.underscore.pluralize}_path")
   end
 %>
 <%= simple_form_for(object, :url => objects_path, :html => {:role => "form", :class => 'form-horizontal', :'parsley-validate' => '', :novalidate => ''}) do |f| %>
