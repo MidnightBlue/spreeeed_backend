@@ -1,0 +1,67 @@
+<%
+  if object.id
+    objects_path = send("backend_#{klass_name.underscore}_path", object)
+  else
+    objects_path = send("backend_#{klass_name.underscore.pluralize}_path")
+  end
+%>
+<%= simple_form_for(object, :url => objects_path, :html => {:role => "form", :class => 'form-horizontal', :'parsley-validate' => '', :novalidate => ''}) do |f| %>
+<% Rails.logger.debug("==== #{object.inspect}") %>
+<% if object.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(object.errors.count, "error") %> prohibited this <%= klass.model_name.human %> from being saved:</h2>
+
+    <ul>
+    <% object.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<% if editable_cols.kind_of?(ActiveSupport::OrderedHash) %>
+  <% editable_cols.each do |group, attrs| %>
+    <div class="header">
+      <h3><%= klass.human_attribute_name(group.to_sym) %></h3>
+    </div>
+    <% attrs.each do |attr| %>
+      <%= cg_render_input(klass, attr, f) %>
+    <% end %>
+  <% end %>
+<% else %>
+  <% editable_cols.each do |attr| %>
+<%= cg_render_input(klass, attr, f) %>
+  <% end %>
+
+  <% hidden_cols.each do |attr| %>
+<%= render_hidden_input(klass, attr, f) %>
+  <% end %>
+<% end %>
+
+<% nested_cols.each do |attr| %>
+<%
+  related_object_name = attr.gsub('_attributes', '')
+  related_klass       = related_object_name.singularize.camelize.constantize
+%>
+
+<%= f.simple_fields_for related_object_name.to_sym do |related_form| %>
+  <%= render :partial => "related_object_fields", :locals => {:f => related_form, :klass => related_klass, :object_name => related_object_name} %>
+<% end %>
+
+<% if (related_object_name.singularize != related_object_name) or (f.object.send(related_object_name).nil?) %>
+<div class="links col-sm-7">
+<% linked_name = %Q|<i class="fa fa-plus"></i> #{t('new')}#{related_klass.model_name.human}|.html_safe %>
+    <%= link_to_add_association linked_name, f, related_object_name.to_sym, {:class => "btn btn-success btn-sm pull-right", :partial => 'related_object_fields', :render_options => {:locals => {:klass => related_klass, :object_name => related_object_name}}} %>
+</div>
+<br clear="all" />
+<% end %>
+
+<% end %>
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <%= f.button :submit, t('save'), :class => "btn btn-primary" %>
+      <%= f.button :button, t('cancel'), :type => 'reset', :class => "btn btn-default" %>
+    </div>
+  </div>
+<% end %>

@@ -1,0 +1,14 @@
+<div class="nested-fields">
+  <div class="<%= object_name %>_container">
+    <div><h5><%= t('new') %><%= klass.model_name.human %></h5></div>
+    <hr />
+
+<% klass.editable_cols.each do |attr| %>
+<%= cg_render_input(klass, attr, f) %>
+<% end %>
+
+  </div>
+
+  <div class="col-sm-7"><%= link_to_remove_association %Q|<i class="fa fa-trash-o"></i> #{t('destroy')}#{klass.model_name.human}|.html_safe, f, :class => "btn btn-danger btn-sm pull-right" %></div>
+  <br clear="all" />
+</div>
