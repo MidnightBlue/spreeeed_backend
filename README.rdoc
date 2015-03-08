@@ -1,5 +1,8 @@
 = SpreeeedBackend
 
+= INSTALL
+gem 'spreeeed_backend', :git => 'git://github.com/MidnightBlue/spreeeed_backend.git'
+
 = INSTALL Devise
 1. run bundle exec rails generate devise:install
 2. run bundle exec rails generate devise User
