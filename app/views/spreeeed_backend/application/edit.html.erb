@@ -1,6 +1,6 @@
 <%
   klass_name_underscore = @klass_name.underscore
-  objects_path          = send("backend_#{klass_name_underscore.pluralize}_path")
+  objects_path          = send("#{SpreeeedBackend.name_space}_#{klass_name_underscore.pluralize}_path")
 %>
 <div class="row">
   <div class="col-sm-12 col-md-12">

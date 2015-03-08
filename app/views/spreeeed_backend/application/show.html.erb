@@ -1,9 +1,9 @@
 <%
   klass_name_underscore = @klass_name.underscore
 
-  edit_object_path = send("edit_backend_#{klass_name_underscore}_path", @object)
-  object_path      = send("backend_#{klass_name_underscore}_path", @object)
-  objects_path     = send("backend_#{klass_name_underscore.pluralize}_path")
+  edit_object_path = send("edit_#{SpreeeedBackend.name_space}_#{klass_name_underscore}_path", @object)
+  object_path      = send("#{SpreeeedBackend.name_space}_#{klass_name_underscore}_path", @object)
+  objects_path     = send("#{SpreeeedBackend.name_space}_#{klass_name_underscore.pluralize}_path")
 %>
 <div class="row">
   <div class="col-md-5">
