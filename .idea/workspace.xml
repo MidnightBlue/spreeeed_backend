@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="54d12f9b-d279-46f4-8594-d486b3547a92" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/index.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/spreeeed_backend/engine.rb" afterPath="$PROJECT_DIR$/lib/spreeeed_backend/engine.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="spreeeed_backend.iws" />
@@ -31,14 +31,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.74380165" vertical-offset="0" max-vertical-offset="484">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="450">
               <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="engine.rb" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/lib/spreeeed_backend/engine.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.12396694" vertical-offset="0" max-vertical-offset="555">
+              <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -82,7 +92,6 @@
         <option value="$PROJECT_DIR$/app/assets/stylesheets/index.css" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/style.css" />
         <option value="$PROJECT_DIR$/README.rdoc" />
-        <option value="$PROJECT_DIR$/lib/spreeeed_backend/engine.rb" />
         <option value="$PROJECT_DIR$/config/locales/default/en.yml" />
         <option value="$PROJECT_DIR$/config/locales/default/will_paginate.yml" />
         <option value="$PROJECT_DIR$/config/locales/default/will_paginate.zh-TW.yml" />
@@ -91,6 +100,7 @@
         <option value="$PROJECT_DIR$/config/locales/devise/zh-TW.yml" />
         <option value="$PROJECT_DIR$/spreeeed_backend.gemspec" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/index.js" />
+        <option value="$PROJECT_DIR$/lib/spreeeed_backend/engine.rb" />
       </list>
     </option>
   </component>
@@ -1004,14 +1014,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/spreeeed_backend/engine.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.65082645" vertical-offset="0" max-vertical-offset="525">
-          <caret line="21" column="74" selection-start-line="21" selection-start-column="74" selection-end-line="21" selection-end-column="74" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/spreeeed_backend.gemspec">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="555">
@@ -1030,11 +1032,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.74380165" vertical-offset="0" max-vertical-offset="484">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="450">
           <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/spreeeed_backend/engine.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.12396694" vertical-offset="0" max-vertical-offset="555">
+          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+          <folding />
         </state>
       </provider>
     </entry>

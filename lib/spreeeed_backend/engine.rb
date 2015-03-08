@@ -1,6 +1,8 @@
 module SpreeeedBackend
   require 'devise'
   require 'bootstrap-will_paginate'
+  require 'simple_form'
+  require 'cocoon'
 
   require 'spreeeed_backend/active_record_extend'
 
