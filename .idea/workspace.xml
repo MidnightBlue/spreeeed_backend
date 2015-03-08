@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="54d12f9b-d279-46f4-8594-d486b3547a92" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile.lock" afterPath="$PROJECT_DIR$/Gemfile.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/index.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spreeeed_backend.gemspec" afterPath="$PROJECT_DIR$/spreeeed_backend.gemspec" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/spreeeed_backend.iml" afterPath="$PROJECT_DIR$/.idea/spreeeed_backend.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="spreeeed_backend.iws" />
@@ -34,11 +31,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="195">
-              <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.74380165" vertical-offset="0" max-vertical-offset="484">
+              <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -46,10 +43,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="spreeeed_backend.gemspec" pinned="false" current-in-tab="true">
+      <file leaf-file-name="spreeeed_backend.gemspec" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/spreeeed_backend.gemspec">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.83677685" vertical-offset="0" max-vertical-offset="555">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="555">
               <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
               <folding />
             </state>
@@ -92,8 +89,8 @@
         <option value="$PROJECT_DIR$/config/locales/default/zh-TW.yml" />
         <option value="$PROJECT_DIR$/config/locales/devise/en.yml" />
         <option value="$PROJECT_DIR$/config/locales/devise/zh-TW.yml" />
-        <option value="$PROJECT_DIR$/app/assets/javascripts/index.js" />
         <option value="$PROJECT_DIR$/spreeeed_backend.gemspec" />
+        <option value="$PROJECT_DIR$/app/assets/javascripts/index.js" />
       </list>
     </option>
   </component>
@@ -650,13 +647,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/spreeeed_backend/backend.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="45" max-vertical-offset="420">
-          <caret line="3" column="60" selection-start-line="3" selection-start-column="60" selection-end-line="3" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/spreeeed_backend/_sidebar.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="420">
@@ -1022,21 +1012,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/index.js">
+    <entry file="file://$PROJECT_DIR$/spreeeed_backend.gemspec">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="195">
-          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="555">
+          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/spreeeed_backend.gemspec">
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/spreeeed_backend/fuelux/loader.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.83677685" vertical-offset="0" max-vertical-offset="555">
-          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+        <state vertical-scroll-proportion="-11.002066" vertical-offset="5325" max-vertical-offset="94080">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.74380165" vertical-offset="0" max-vertical-offset="484">
+          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
