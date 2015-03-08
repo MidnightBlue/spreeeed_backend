@@ -25,12 +25,12 @@
       <h3><%= klass.human_attribute_name(group.to_sym) %></h3>
     </div>
     <% attrs.each do |attr| %>
-      <%= cg_render_input(klass, attr, f) %>
+      <%= render_input(klass, attr, f) %>
     <% end %>
   <% end %>
 <% else %>
   <% editable_cols.each do |attr| %>
-<%= cg_render_input(klass, attr, f) %>
+<%= render_input(klass, attr, f) %>
   <% end %>
 
   <% hidden_cols.each do |attr| %>
