@@ -9,8 +9,7 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require jquery.ui.core
- *= require jquery.ui.theme
+ *= require ../javascripts/spreeeed_backend/jquery.ui/jquery-ui
  *= require ../javascripts/spreeeed_backend/bootstrap/dist/css/bootstrap
  *= require_tree .
  */
