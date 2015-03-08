@@ -71,7 +71,7 @@ module SpreeeedBackend
 
       respond_to do |format|
         if @object.save
-          format.html { redirect_to [:backend, @object], notice: "#{@klass_name} was successfully created." }
+          format.html { redirect_to [SpreeeedBackend.name_space.to_sym, @object], notice: "#{@klass_name} was successfully created." }
           format.json { render json: @object, status: :created, location: @object }
         else
           format.html { render action: "new" }
@@ -85,7 +85,7 @@ module SpreeeedBackend
 
       respond_to do |format|
         if @object.update_attributes(params[@klass_name.underscore.to_sym])
-          format.html { redirect_to [:backend, @object], notice: "#{@klass_name} was successfully updated." }
+          format.html { redirect_to [SpreeeedBackend.name_space.to_sym, @object], notice: "#{@klass_name} was successfully updated." }
           format.json { head :no_content }
         else
           format.html { render action: "edit" }
