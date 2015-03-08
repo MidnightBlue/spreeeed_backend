@@ -1,0 +1,22 @@
+---
+zh-TW:
+  save: 儲存
+  cancel: 取消
+  edit: 編輯
+  destroy: 刪除
+  back: 返回
+  new: 新增
+  frontend_view: 前台顯示
+  search: 搜尋
+  choose_cover: 選擇封面
+  choose_photo: 選擇照片
+  remove_photo: 移除照片
+  choose_file: 選擇檔案
+  remove_file: 移除檔案
+  upload: 上傳
+  remark: 備註
+  operations: 操作
+  change: 更換
+  sign_in: 登入
+  sign_out: 登出
+  select_one: "請選擇..."
