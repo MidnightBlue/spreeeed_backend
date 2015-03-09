@@ -17,9 +17,14 @@ module SpreeeedBackend
 
   class Engine < ::Rails::Engine
     config.time_zone = 'Taipei'
+
     config.i18n.load_path += Dir["#{config.root}/config/locales/**/*.yml"]
     config.i18n.available_locales ||= [:'zh-TW']
     config.i18n.default_locale = :'zh-TW'
+
+    initializer "SpreeeedBackend.assets.precompile" do |app|
+      app.config.assets.precompile += %w(index.css style.css index.js)
+    end
 
     isolate_namespace SpreeeedBackend
   end
