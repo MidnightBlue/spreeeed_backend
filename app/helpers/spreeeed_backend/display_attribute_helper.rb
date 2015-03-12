@@ -66,5 +66,15 @@ module SpreeeedBackend
       end
     end
 
+    def object_name(object)
+      if object.respond_to?(:name)
+        object.name
+      elsif object.respond_to?(:title)
+        object.title
+      else
+        object.id
+      end
+    end
+
   end
 end
