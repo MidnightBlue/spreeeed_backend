@@ -1,0 +1,60 @@
+<script type="text/javascript">
+  $(function(){
+    $("#cl-wrapper").css({opacity:1,'margin-left':0});
+  });
+</script>
+
+<% if notice %>
+<script type="text/javascript">
+  $.gritter.add({
+    title: '系統訊息',
+    text: '<%= notice %>',
+    class_name: 'success'
+  });
+</script>
+<% end %>
+
+<% if alert %>
+<script type="text/javascript">
+  $.gritter.add({
+    title: '系統訊息',
+    text: '<%= alert %>',
+    class_name: 'danger'
+  });
+</script>
+<% end %>
+
+<script type="text/javascript">
+  $('.icheck').iCheck({
+    checkboxClass: 'icheckbox_flat-green',
+    radioClass: 'iradio_flat-green'
+  });
+</script>
+
+<script type="text/javascript">
+$(".datetime").datetimepicker({
+  autoclose: true,
+  language: 'zh-TW',
+});
+</script>
+
+<script type="text/javascript">
+
+function set_duration(css_class) {
+  $('.' + css_class).daterangepicker({
+    format:    'YYYY/MM/DD',
+    startDate: '<%= Time.zone.now.strftime("%Y/%m") %>/01',
+    endDate:   '<%= Time.zone.now.year %>/12/31',
+  },
+  function(start, end, label) {
+    $('#order_started_at').val(start.format('YYYY/MM/DD'));
+    $('#order_ended_at').val(end.format('YYYY/MM/DD'));
+  });
+}
+</script>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+      $("input[class*='boolean']").bootstrapSwitch();
+  });
+</script>
