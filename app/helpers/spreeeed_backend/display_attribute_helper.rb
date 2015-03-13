@@ -72,7 +72,7 @@ module SpreeeedBackend
       elsif object.respond_to?(:title)
         object.title
       else
-        object.id
+        %Q|#{object.model_name.human} - #{object.id}|
       end
     end
 
