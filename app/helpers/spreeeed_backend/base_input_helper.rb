@@ -176,12 +176,12 @@ module SpreeeedBackend
 
     def render_association_input(klass, attr, form_object, label_method=:name)
       association = attr.to_s.split('_').first.to_sym
-      if association == :entity
-        render_select2_input(klass, attr, form_object, [])
-      else
+      # if association == :entity
+      #   render_select2_input(klass, attr, form_object, [])
+      # else
         collection  = association.to_s.camelize.constantize.all.collect { |item| [item.send(label_method), item.id] }
         render_select_input(klass, attr, form_object, collection)
-      end
+      # end
     end
 
     def render_datetime_input(klass, attr, form_object, time_format="%Y-%m-%d %H:%M:%S", js_time_format="yyyy-mm-dd hh:ii:ss", start_view='1', min_view='0')
