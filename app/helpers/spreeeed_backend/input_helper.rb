@@ -46,7 +46,7 @@ module SpreeeedBackend
                 collection = klass.send(attr.to_s.pluralize.to_sym)
 
                 if attr.to_s == 'aasm_state'
-                  mapping = collection.clone
+                  mapping = ActiveSupport::OrderedHash.new
                   collection.each do |item|
                     mapping[item] = display_state(form_object.object, attr)
                   end
