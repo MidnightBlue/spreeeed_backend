@@ -44,6 +44,15 @@ module SpreeeedBackend
             else
               if klass.respond_to?(attr.to_s.pluralize.to_sym)
                 collection = klass.send(attr.to_s.pluralize.to_sym)
+
+                if attr.to_s == 'aasm_state'
+                  mapping = collection.clone
+                  collection.each do |item|
+                    mapping[item] = display_state(object, attr)
+                  end
+                  collection = mapping
+                end
+
                 render_select_input(klass, attr, form_object, collection)
               else
                 render_general_input(klass, attr, form_object)
