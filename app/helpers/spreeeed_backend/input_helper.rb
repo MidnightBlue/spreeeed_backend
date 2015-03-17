@@ -48,7 +48,8 @@ module SpreeeedBackend
                 if attr.to_s == 'aasm_state'
                   mapping = []
                   collection.each do |item|
-                    mapping << [display_state(form_object.object, attr), item]
+                    object = form_object.object
+                    mapping << [I18n.t("activerecord.attributes.#{object.class.to_s.underscore}.states.#{attr.to_s}.#{item}"), item]
                   end
                   collection = mapping
                   Rails.logger.debug("=== collection = #{collection}")
