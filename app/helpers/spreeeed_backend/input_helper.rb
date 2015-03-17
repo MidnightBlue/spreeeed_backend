@@ -51,6 +51,7 @@ module SpreeeedBackend
                     mapping[item] = display_state(form_object.object, attr)
                   end
                   collection = mapping
+                  Rails.logger.debug("=== collection = #{collection}")
                 end
 
                 render_select_input(klass, attr, form_object, collection)
