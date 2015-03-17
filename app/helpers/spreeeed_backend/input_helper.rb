@@ -48,7 +48,7 @@ module SpreeeedBackend
                 if attr.to_s == 'aasm_state'
                   mapping = collection.clone
                   collection.each do |item|
-                    mapping[item] = display_state(form_object, attr)
+                    mapping[item] = display_state(form_object.object, attr)
                   end
                   collection = mapping
                 end
