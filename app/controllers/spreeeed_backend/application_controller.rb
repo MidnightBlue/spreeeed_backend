@@ -114,9 +114,11 @@ module SpreeeedBackend
       if object.id.present?
         object_name = object.class.to_s.underscore
         value       = object.send(attr.to_sym)
-        if [:name, :title, :subject, :content].include?(attr.to_sym)
+        if [:id, :name, :title, :subject, :content].include?(attr.to_sym)
           object_path = self.send("#{SpreeeedBackend.name_space}_#{object_name}_path", object.id)
           view_context.link_to(value, object_path, {:target => '_blank'})
+        elsif attr.to_s == 'aasm_state'
+          view_context.display_state(object, attr)
         elsif value.kind_of?(Date)
           value.strftime("%Y/%m/%d")
           # view_context.send(attr, object)

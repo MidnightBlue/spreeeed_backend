@@ -6,7 +6,11 @@ module SpreeeedBackend
         return object.send(association.to_sym).name
       end
 
-      object.send(attr.to_sym)
+      if attr.to_s == 'aasm_state'
+        display_state(object, attr)
+      else
+        format_value(object.send(attr.to_sym))
+      end
     end
 
 
@@ -33,11 +37,15 @@ module SpreeeedBackend
       end
     end
 
-    def display_value(object, attr)
-      value = object.send(attr.to_sym)
-      content_tag :td, :class => 'text-right' do
-        value
-      end.html_safe
+    # def display_value(object, attr)
+    #   value = object.send(attr.to_sym)
+    #   content_tag :td, :class => 'text-right' do
+    #     value
+    #   end.html_safe
+    # end
+
+    def display_state(object, attr)
+      I18n.t("activerecord.attributes.#{object.class.to_s.underscore}.states.#{attr.to_s}.#{object.send(attr)}")
     end
 
     def yes_or_no(flag)
