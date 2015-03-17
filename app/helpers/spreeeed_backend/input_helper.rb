@@ -48,7 +48,7 @@ module SpreeeedBackend
                 if attr.to_s == 'aasm_state'
                   mapping = ActiveSupport::OrderedHash.new
                   collection.each do |item|
-                    mapping[item] = display_state(form_object.object, attr)
+                    mapping[display_state(form_object.object, attr)] = item
                   end
                   collection = mapping
                   Rails.logger.debug("=== collection = #{collection}")
