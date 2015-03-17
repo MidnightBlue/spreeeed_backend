@@ -46,9 +46,9 @@ module SpreeeedBackend
                 collection = klass.send(attr.to_s.pluralize.to_sym)
 
                 if attr.to_s == 'aasm_state'
-                  mapping = ActiveSupport::OrderedHash.new
+                  mapping = []
                   collection.each do |item|
-                    mapping[display_state(form_object.object, attr)] = item
+                    mapping << [display_state(form_object.object, attr), item]
                   end
                   collection = mapping
                   Rails.logger.debug("=== collection = #{collection}")
