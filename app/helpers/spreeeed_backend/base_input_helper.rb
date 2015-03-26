@@ -117,7 +117,7 @@ module SpreeeedBackend
     end
 
 
-    def render_select2_input(klass, attr, form_object, collection=[])
+    def render_select2_input(klass, attr, form_object, collection=nil, query_path=nil)
       id = [klass.name.underscore, attr].join('_')
 
       content_tag :div, :class => "form-group" do
@@ -132,7 +132,7 @@ module SpreeeedBackend
           end
         end
 
-        if !collection.empty?
+        if collection
           c1 += %Q|
 <script>
   $(document).ready(function() {
@@ -154,7 +154,7 @@ module SpreeeedBackend
       width: 'resolve',
       minimumInputLength: 1,
       ajax: {
-        url: "/backend/entities/query.json",
+        url: "#{query_path}.json",
         data: function (term, page) {
           return {
             q: term
