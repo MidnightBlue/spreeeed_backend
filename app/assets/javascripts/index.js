@@ -22,3 +22,4 @@
 //= require spreeeed_backend/fuelux/loader.js
 //= require spreeeed_backend/jquery.nanoscroller/jquery.nanoscroller
 //= require spreeeed_backend/jquery.select2/select2.js
+//= require spreeeed_backend/jquery.select2/select2_locale_zh-TW.js
