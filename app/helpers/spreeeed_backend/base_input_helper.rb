@@ -117,7 +117,7 @@ module SpreeeedBackend
     end
 
 
-    def render_select2_input(klass, attr, form_object, collection=nil)
+    def render_select2_input(klass, attr, form_object, collection=[])
       id = [klass.name.underscore, attr].join('_')
 
       content_tag :div, :class => "form-group" do
@@ -132,7 +132,7 @@ module SpreeeedBackend
           end
         end
 
-        if collection
+        if !collection.empty?
           c1 += %Q|
 <script>
   $(document).ready(function() {
