@@ -7,7 +7,7 @@ module SpreeeedBackend
   require 'spreeeed_backend/active_record_extend'
 
   class << self
-    mattr_accessor :name_space
+    mattr_accessor :name_space, :devise_auth_resource
     self.name_space           = 'backend'
     self.devise_auth_resource = 'user'
   end
