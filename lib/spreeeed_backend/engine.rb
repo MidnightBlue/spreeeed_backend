@@ -8,7 +8,8 @@ module SpreeeedBackend
 
   class << self
     mattr_accessor :name_space
-    self.name_space = 'backend'
+    self.name_space           = 'backend'
+    self.devise_auth_resource = 'user'
   end
 
   def self.setup(&block)

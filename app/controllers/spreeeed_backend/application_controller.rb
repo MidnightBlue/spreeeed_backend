@@ -6,7 +6,7 @@ module SpreeeedBackend
 
     PER_PAGE = 30
 
-    before_filter :authenticate_user!, :setup_global_variables
+    before_filter :"authenticate_#{SpreeeedBackend.devise_auth_resource}!", :setup_global_variables
 
     def setup_global_variables
       @klass            ||= NilClass
