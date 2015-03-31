@@ -31,7 +31,18 @@ module ActiveRecordExtension
     end
 
     def nested_cols
-      self.attr_accessible[:default].to_a.collect{ |attr| attr if attr.match(/attributes$/) }.compact
+      res = ActiveSupport::OrderedHash.new
+      
+      cols = self.attr_accessible[:default].to_a.collect{ |attr| attr if attr.match(/attributes$/) }.compact
+      cols.each do |col|
+        self.reflect_on_all_associations.each do |r|
+          if r.name == col.to_sym
+            res[r.name.to_s] = r.options[:class_name]
+          end
+        end
+      end
+
+      res
     end
 
     def belongs_to_associations
