@@ -8,7 +8,7 @@
         </div>
       </div>
       <div class="side-user">
-        <div class="avatar"><%# user_avatar(current_user, {:width => 50, :height => 50}) %></div>
+        <div class="avatar"><%# user_avatar(current_auth_user, {:width => 50, :height => 50}) %></div>
         <div class="info">
           <p><%= current_user_name %></p>
           <p><%= link_to(t('sign_out'), destroy_user_session_path, :method => :delete) %>

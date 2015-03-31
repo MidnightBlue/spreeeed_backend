@@ -11,12 +11,16 @@ module SpreeeedBackend
       self.output_buffer = render(:file => "layouts/#{layout}")
     end
 
+    def current_auth_user
+      send("current_#{SpreeeedBackend.devise_auth_resource}")
+    end
+
     def current_user_name
-      current_user.respond_to?(:name) ? current_user.name : current_user.email
+      current_auth_user.respond_to?(:name) ? current_auth_user.name : current_auth_user.email
     end
 
     def current_user_is_root?
-      current_user.respond_to?('is_root?'.to_sym) ? current_user.is_root? : true
+      current_auth_user.respond_to?('is_root?'.to_sym) ? current_auth_user.is_root? : true
     end
 
     def search_box_placeholder(klass, searchable_cols)
