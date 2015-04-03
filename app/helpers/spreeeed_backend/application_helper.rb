@@ -16,7 +16,11 @@ module SpreeeedBackend
     end
 
     def current_user_name
-      current_auth_user.respond_to?(:name) ? current_auth_user.name : current_auth_user.email
+      if current_auth_user
+        current_auth_user.respond_to?(:name) ? current_auth_user.name : current_auth_user.email
+      else
+        ""
+      end
     end
 
     def current_user_is_root?
