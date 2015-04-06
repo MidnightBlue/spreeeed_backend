@@ -30,6 +30,8 @@ module SpreeeedBackend
           value.strftime("%Y/%m/%d %H:%M")
         when 'TrueClass'
           yes_or_no(value)
+        when 'FalseClass'
+          yes_or_no(value)
         when 'String'
           simple_format(value)
         else
