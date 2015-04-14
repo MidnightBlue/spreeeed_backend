@@ -344,7 +344,7 @@ pre {
     text-align: left;
     width: 206px;
     color: #2c3e50;
-    background: url(../images/logo.png) no-repeat 0 11px;
+    /* background: url(../images/logo.png) no-repeat 0 11px; */
     text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
     font-weight: 300;
     font-size: 19px;
@@ -929,7 +929,6 @@ input::-webkit-input-speech-button {
 }
 .sidebar-logo {
     /* background: #7761a7 url(../images/logo.png) no-repeat 15px 19px; */
-    /* background: #7761a7 url(../../static-assets/images/banner2.png) no-repeat; */
     padding: 15px 20px;
     display: block;
     height: 64px;
@@ -1035,8 +1034,6 @@ input::-webkit-input-speech-button {
 .sb-collapsed .sidebar-logo {
     padding: 4px 0 5px;
     /* background: url("../images/logo.png") no-repeat scroll 23px -48px #7761a7; */
-    background: url(../../static-assets/images/logo2.jpg) no-repeat scroll #7761a7;
-
 }
 .sb-collapsed .sidebar-logo .logo a {
     content: " ";
@@ -7265,8 +7262,6 @@ ul.timeline li > .date {
     .sidebar-logo {
         padding: 4px 0 5px;
         /* background: url("../images/logo.png") no-repeat scroll 23px -48px #7761a7; */
-        background: url(../../static-assets/images/logo2.jpg) no-repeat #7761a7;
-
     }
     #head-nav.topbar .sidebar-logo {
         display: inline-block;
@@ -7470,10 +7465,10 @@ ul.timeline li > .date {
     }
     .navbar-header {
         padding: 0 10px;
-        background: #7761a7 url(../images/logo.png) no-repeat 15px 10px;
+        /* background: #7761a7 url(../images/logo.png) no-repeat 15px 10px; */
     }
     #head-nav.topbar .navbar-header {
-        background: #7761a7 url(../images/logo.png) no-repeat 30px 18px;
+        /* background: #7761a7 url(../images/logo.png) no-repeat 30px 18px; */
         padding: 8px 0;
     }
     #head-nav.topbar .sidebar-logo {
@@ -7539,7 +7534,7 @@ ul.timeline li > .date {
         padding-bottom: 0;
     }
     .sb-collapsed .cl-sidebar .sidebar-logo {
-        background: url("../images/logo.png") no-repeat scroll 15px 19px #7761a7;
+        /* background: url("../images/logo.png") no-repeat scroll 15px 19px #7761a7; */
     }
     #cl-wrapper.fixed-menu .menu-space,
     #cl-wrapper.fixed-menu.sb-collapsed .menu-space {
