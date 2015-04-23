@@ -7,6 +7,7 @@
 //= require cocoon
 //= require spreeeed_backend/jasny.bootstrap/extend/js/jasny-bootstrap.js
 //= require spreeeed_backend/jquery.gritter/js/jquery.gritter.js
+//= require spreeeed_backend/behaviour/core.js
 //= require spreeeed_backend/jquery.parsley/parsley.js
 //= require spreeeed_backend/jquery.parsley/i18n/messages.zh_tw
 //= require spreeeed_backend/jquery.ui/jquery-ui
