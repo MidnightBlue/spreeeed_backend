@@ -54,7 +54,8 @@ module SpreeeedBackend
       icon_css   = attrs[:icon_css]
       path       = attrs[:path]
 
-      active     = (path == root_path ? (request.path == path) : request.path.match(path))
+      # active     = (path == root_path ? (request.path == path) : request.path.match(path))
+      active     = (request.path == path)
       active_css = (active ? ' class="active"' : '')
 
       %Q|<li#{active_css}><a href="#{path}"><i class="fa #{icon_css}"></i><span>#{label}</span></a></li>|
