@@ -29,6 +29,7 @@
 
 //= require spreeeed_backend/jquery.easypiechart/jquery.easy-pie-chart.js
 //= require spreeeed_backend/jquery.flot/jquery.flot.js
+//= require spreeeed_backend/jquery.flot/jquery.flot.time.js
 //= require spreeeed_backend/jquery.flot/jquery.flot.pie.js
 //= require spreeeed_backend/jquery.flot/jquery.flot.resize.js
 //= require spreeeed_backend/jquery.flot/jquery.flot.labels.js
