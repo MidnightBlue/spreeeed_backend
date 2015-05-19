@@ -188,7 +188,7 @@ module SpreeeedBackend
       res        = []
       conditions = []
       searchable_cols.each do |col|
-        conditions << "#{col} LIKE ?"
+        conditions << "#{col} ILIKE ?"
         res << "%#{q}%"
       end
       [conditions.join(' OR ')] + res

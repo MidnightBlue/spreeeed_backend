@@ -127,7 +127,7 @@ module SpreeeedBackend
 
         c1 += content_tag :div, :class => "col-sm-6" do
           content_tag :div, :class => "input-group" do
-            html_options = bind_validators(klass, attr).merge({:class => ''})
+            html_options = bind_validators(klass, attr).merge({:class => "#{id.__id__} form-control", :style => 'width: 300px;'})
             form_object.input_field(attr.to_sym, html_options)
           end
         end
@@ -136,7 +136,7 @@ module SpreeeedBackend
           c1 += %Q|
 <script>
   $(document).ready(function() {
-    $("##{id}").select2({
+    $(".#{id.__id__}").select2({
       placeholder: '#{I18n.t('select_one')}',
       width: 'resolve',
       minimumInputLength: 1,
@@ -176,12 +176,8 @@ module SpreeeedBackend
 
     def render_association_input(klass, attr, form_object, label_method=:name)
       association = attr.to_s.split('_').first.to_sym
-      # if association == :entity
-      #   render_select2_input(klass, attr, form_object, [])
-      # else
-        collection  = association.to_s.camelize.constantize.all.collect { |item| [item.send(label_method), item.id] }
-        render_select_input(klass, attr, form_object, collection)
-      # end
+      collection  = association.to_s.camelize.constantize.all.collect { |item| [item.send(label_method), item.id] }
+      render_select_input(klass, attr, form_object, collection)
     end
 
     def render_datetime_input(klass, attr, form_object, time_format="%Y-%m-%d %H:%M:%S", js_time_format="yyyy-mm-dd hh:ii:ss", start_view='1', min_view='0')
