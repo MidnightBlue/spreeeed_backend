@@ -9,13 +9,13 @@ module SpreeeedBackend
     before_filter :"authenticate_#{SpreeeedBackend.devise_auth_resource}!", :setup_global_variables
 
     def setup_global_variables
-      @klass            ||= NilClass
-      @klass_name       = @klass.name
-      @displayable_cols = (@klass_name == 'NilClass' ? [] : @klass.displayable_cols)
-      @editable_cols    = (@klass_name == 'NilClass' ? [] : @klass.editable_cols)
-      @nested_cols      = (@klass_name == 'NilClass' ? [] : @klass.nested_cols)
-      @hidden_cols      = (@klass_name == 'NilClass' ? [] : @klass.hidden_cols)
-      default_sorting   = []
+      @klass             ||= NilClass
+      @klass_name        = @klass.name
+      @displayable_cols  = (@klass_name == 'NilClass' ? [] : @klass.displayable_cols)
+      @editable_cols     = (@klass_name == 'NilClass' ? [] : @klass.editable_cols)
+      @nested_cols       = (@klass_name == 'NilClass' ? [] : @klass.nested_cols)
+      @hidden_cols       = (@klass_name == 'NilClass' ? [] : @klass.hidden_cols)
+      @default_sort_cols = []
     end
 
     def index
@@ -37,7 +37,7 @@ module SpreeeedBackend
         sort_cols        = @klass.default_sort_cols
       end
 
-      @default_sorting = render_default_sort_cols(sort_cols, @attrs)
+      @default_sort_cols = render_default_sort_cols(sort_cols, @attrs)
 
       if params[:sSearch].present?
         q          = params[:sSearch]
