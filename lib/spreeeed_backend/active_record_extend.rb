@@ -26,6 +26,11 @@ module ActiveRecordExtension
       displayable_cols
     end
 
+    def default_sort_cols
+      # [[:id, 'ASC']]
+      []
+    end
+
     def hidden_cols
       []
     end

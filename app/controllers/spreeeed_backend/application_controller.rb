@@ -25,16 +25,25 @@ module SpreeeedBackend
       @datatable_cols  = datatable_cols(@klass.new, @attrs)
       @sortable_cols   = render_sortable_cols(@klass, @attrs)
 
-      sort_col         = @attrs[params[:iSortCol_0].to_i] || 'id'
-      sort_col         = "#{sort_col}_id" if @klass.belongs_to_associations.include?(sort_col)
-      sortby           = params[:sSortDir_0] || "desc"
+
+      sort_cols        = []
+      if params[:iSortCol_0].present?
+        sort_col         = @attrs[params[:iSortCol_0].to_i] || 'id'
+        sort_col         = "#{sort_col}_id" if @klass.belongs_to_associations.include?(sort_col)
+        sort_by          = params[:sSortDir_0] || "desc"
+        sort_cols        << [sort_col, sort_by]
+      else
+        sort_cols        = @klass.default_sort_cols
+      end
+
+      @default_sorting = render_default_sort_cols(sort_cols, @attrs)
 
       if params[:sSearch].present?
         q          = params[:sSearch]
-        @instances = @klass.where(searchable_conditions(@searchable_cols, q)).order("#{sort_col} #{sortby}").paginate(:page => page, :per_page => per_page)
+        @instances = @klass.where(searchable_conditions(@searchable_cols, q)).order(order_conditions(sort_cols)).paginate(:page => page, :per_page => per_page)
         total      = @klass.where(searchable_conditions(@searchable_cols, q)).count
       else
-        @instances = @klass.order("#{sort_col} #{sortby}").paginate(:page => page, :per_page => per_page)
+        @instances = @klass.order(order_conditions(sort_cols)).paginate(:page => page, :per_page => per_page)
         total      = @klass.count
       end
 
@@ -157,6 +166,16 @@ module SpreeeedBackend
       res
     end
 
+    def render_default_sort_cols(sort_cols, attrs)
+      res = []
+      sort_cols.each do |sort_col|
+        if i = attrs.index(sort_col[0])
+          res << [i, sort_col[1]]
+        end
+      end
+      res
+    end
+
     def datatable_cols(object, attrs)
       datatable_mapping(object, attrs).collect{ |col| col[:label]}
     end
@@ -192,6 +211,10 @@ module SpreeeedBackend
         res << "%#{q}%"
       end
       [conditions.join(' OR ')] + res
+    end
+
+    def order_conditions(sort_cols)
+      sort_cols.collect{ |sort_col| "#{sort_col[0]} #{sort_col[1]}"}.join(', ')
     end
 
     def render_datatable_data(objects, attrs, page, total)

@@ -59,7 +59,8 @@
                 },
                 bServerSide: true,
                 sAjaxSource: path,
-                aoColumns: <%= @sortable_cols.to_json.html_safe %>
+                aoColumns: <%= @sortable_cols.to_json.html_safe %>,
+                aaSorting: <%= @default_sorting_cols.to_json.html_safe %>,
             });
 
             //Search input style
