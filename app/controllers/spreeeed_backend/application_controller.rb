@@ -15,6 +15,7 @@ module SpreeeedBackend
       @editable_cols    = (@klass_name == 'NilClass' ? [] : @klass.editable_cols)
       @nested_cols      = (@klass_name == 'NilClass' ? [] : @klass.nested_cols)
       @hidden_cols      = (@klass_name == 'NilClass' ? [] : @klass.hidden_cols)
+      default_sorting   = []
     end
 
     def index
