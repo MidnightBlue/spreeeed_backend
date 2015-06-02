@@ -50,10 +50,33 @@ module ActiveRecordExtension
       res
     end
 
-    def belongs_to_associations
-      self.reflect_on_all_associations(:belongs_to).collect(&:name)
+    def all_associations(macro=nil)
+      self.reflect_on_all_associations(macro)
     end
 
+    def all_associations_names(macro=nil)
+      all_associations(macro).collect(&:name)
+    end
+
+    def all_associations_ids(macro=nil)
+      res = []
+      all_associations(macro).each do |association|
+        if association.options and association.options[:foreign_key]
+          res << association.options[:foreign_key]
+        else
+          res << association.name.to_s.foreign_key.to_sym
+        end
+      end
+      res
+    end
+
+
+    # DEPRECATED
+    def belongs_to_associations
+      belongs_to_associations.collect(&:name)
+    end
+
+    # DEPRECATED
     def has_many_associations
       self.reflect_on_all_associations(:has_many).collect(&:name)
     end

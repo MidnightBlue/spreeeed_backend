@@ -31,7 +31,7 @@ module SpreeeedBackend
       if params[:iSortCol_0].present?
         sort_col         = @attrs[params[:iSortCol_0].to_i] || 'id'
         sort_col         = "#{sort_col}_id" if @klass.belongs_to_associations.include?(sort_col)
-        sort_by          = params[:sSortDir_0] || "desc"
+        sort_by          = params[:sSortDir_0] ? params[:sSortDir_0] : 'ASC'
         sort_cols        << [sort_col, sort_by]
       else
         sort_cols        = @klass.default_sort_cols
