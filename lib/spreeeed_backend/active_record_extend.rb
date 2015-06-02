@@ -73,7 +73,7 @@ module ActiveRecordExtension
 
     # DEPRECATED
     def belongs_to_associations
-      belongs_to_associations.collect(&:name)
+      self.reflect_on_all_associations(:belongs_to).collect(&:name)
     end
 
     # DEPRECATED
