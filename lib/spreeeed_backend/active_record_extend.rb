@@ -41,8 +41,8 @@ module ActiveRecordExtension
       cols = self.attr_accessible[:default].to_a.collect{ |attr| attr if attr.match(/attributes$/) }.compact
       cols.each do |col|
         self.reflect_on_all_associations.each do |r|
-          name = r.name.to_s.singularize
-          col_name = col.to_s.delete('_attributes')
+          name = r.name.to_s
+          col_name = col.to_s.gsub('_attributes', '')
           if name == col_name
             res[name] = r.options[:class_name]
           end
