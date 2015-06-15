@@ -44,7 +44,7 @@ module ActiveRecordExtension
           name = r.name.to_s
           col_name = col.to_s.gsub('_attributes', '')
           if name == col_name
-            res[name] = r.options[:class_name]
+            res[name] = (r.options[:class_name] ? r.options[:class_name] : col_name.to_s.singularize.camelize)
           end
         end
       end
