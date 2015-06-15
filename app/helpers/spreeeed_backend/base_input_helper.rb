@@ -44,6 +44,7 @@ module SpreeeedBackend
 
     def render_text_input(klass, attr, form_object, html_options={})
       name = [klass.name.underscore, attr].join('_')
+      html_options.merge!({:row => 6})
 
       content_tag :div, :class => "form-group" do
         content = content_tag :label, :class => "col-sm-3 control-label", :for => name do
