@@ -21,6 +21,9 @@ module SpreeeedBackend
           render_datetime_input(klass, attr, form_object)
         when :date
           render_date_input(klass, attr, form_object)
+        when :text
+          render_text_input(klass, attr, form_object)
+
         # html_options = {}
         # case attr.to_sym
         # when :birthday

@@ -42,6 +42,26 @@ module SpreeeedBackend
       end
     end
 
+    def render_text_input(klass, attr, form_object, html_options={})
+      name = [klass.name.underscore, attr].join('_')
+
+      content_tag :div, :class => "form-group" do
+        content = content_tag :label, :class => "col-sm-3 control-label", :for => name do
+          klass.human_attribute_name(attr.to_sym)
+        end
+
+        content += content_tag :div, :class => "col-sm-6" do
+          sub_content = form_object.input_field attr.to_sym, bind_validators(klass, attr).merge(html_options)
+          sub_content += content_tag :div, :id => "#{name}-error" do
+          end
+
+          sub_content
+        end
+
+        content
+      end
+    end
+
     def render_radio_input(klass, attr, form_object, collection)
       id = [klass.name.underscore, attr].join('_')
 
