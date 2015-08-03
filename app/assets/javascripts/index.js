@@ -33,3 +33,4 @@
 //= require spreeeed_backend/jquery.flot/jquery.flot.pie.js
 //= require spreeeed_backend/jquery.flot/jquery.flot.resize.js
 //= require spreeeed_backend/jquery.flot/jquery.flot.labels.js
+//= require spreeeed_backend/jquery.flot/jquery.flot.orderBars.js
