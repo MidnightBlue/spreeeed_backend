@@ -25,24 +25,6 @@
 <% end %>
 
 <script type="text/javascript">
-  $('.icheck').iCheck({
-    checkboxClass: 'icheckbox_flat-green',
-    radioClass: 'iradio_flat-green'
-  });
-</script>
-
-<script type="text/javascript">
-  $('.bslider').slider();
-</script>
-
-<script type="text/javascript">
-$(".datetime").datetimepicker({
-  autoclose: true,
-  language: 'zh-TW',
-});
-</script>
-
-<script type="text/javascript">
 
 function set_duration(css_class) {
   $('.' + css_class).daterangepicker({
@@ -60,5 +42,18 @@ function set_duration(css_class) {
 <script type="text/javascript">
   $(document).ready(function() {
       $("input[class*='boolean']").bootstrapSwitch();
+
+      $(".datetime").datetimepicker({
+        autoclose: true,
+        language: 'zh-TW',
+      });
+
+      $('.bslider').slider();
+
+      $('.icheck').iCheck({
+        checkboxClass: 'icheckbox_flat-green',
+        radioClass: 'iradio_flat-green'
+      });
+
   });
 </script>
