@@ -127,7 +127,7 @@ module SpreeeedBackend
         if [:id, :name, :title, :subject, :content].include?(attr.to_sym)
           object_path = self.send("#{SpreeeedBackend.name_space}_#{object_name}_path", object.id)
           view_context.link_to(value, object_path, {:target => '_blank'})
-        elsif object.class.belongs_to_associations.includes(attr)
+        elsif object.class.belongs_to_associations.include?(attr)
           if value.respond_to(:name)
             datatable_value(value, :name)
           else
