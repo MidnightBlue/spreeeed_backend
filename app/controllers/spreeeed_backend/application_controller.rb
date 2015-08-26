@@ -127,6 +127,12 @@ module SpreeeedBackend
         if [:id, :name, :title, :subject, :content].include?(attr.to_sym)
           object_path = self.send("#{SpreeeedBackend.name_space}_#{object_name}_path", object.id)
           view_context.link_to(value, object_path, {:target => '_blank'})
+        elsif object.class.belongs_to_associations.includes(attr)
+          if value.respond_to(:name)
+            datatable_value(value, :name)
+          else
+            datatable_value(value, :id)
+          end
         elsif attr.to_s == 'aasm_state'
           view_context.display_state(object, attr)
         elsif value.kind_of?(Date)
