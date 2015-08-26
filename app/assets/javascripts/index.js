@@ -26,6 +26,7 @@
 //= require spreeeed_backend/behaviour/core.js
 //= require spreeeed_backend/jquery.select2/select2.js
 // require spreeeed_backend/jquery.select2/select2_locale_zh-TW.js
+//= require spreeeed_backend/bootstrap.slider/js/bootstrap-slider.js
 
 //= require spreeeed_backend/jquery.easypiechart/jquery.easy-pie-chart.js
 //= require spreeeed_backend/jquery.flot/jquery.flot.js
