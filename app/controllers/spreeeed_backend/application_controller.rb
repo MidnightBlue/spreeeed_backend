@@ -130,6 +130,8 @@ module SpreeeedBackend
         elsif object.class.belongs_to_associations.include?(attr)
           if value.respond_to?(:name)
             datatable_value(value, :name)
+          elsif value.nil?
+            nil
           else
             datatable_value(value, :id)
           end
