@@ -42,7 +42,7 @@ module ActiveRecordExtension
     def nested_cols
       res = ActiveSupport::OrderedHash.new
       
-      cols = self.attr_accessible[:default].to_a.collect{ |attr| attr if attr.match(/attributes$/) }.compact
+      cols = self.attribute_names.collect{ |attr| attr if attr.match(/attributes$/) }.compact
       cols.each do |col|
         self.reflect_on_all_associations.each do |r|
           name = r.name.to_s
