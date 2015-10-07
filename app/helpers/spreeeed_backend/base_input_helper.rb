@@ -13,6 +13,7 @@ module SpreeeedBackend
         end
       end
 
+      html_options.delete(:pattern)
       return html_options
     end
 
