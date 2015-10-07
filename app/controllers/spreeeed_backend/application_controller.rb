@@ -246,12 +246,10 @@ module SpreeeedBackend
       }
     end
 
+    private
+    def klass_params(klass)
+      params.require(klass.name.underscore).permit(klass.editable_cols)
+    end
+
   end
-
-  private
-
-  def klass_params(klass)
-    params.require(klass.name.underscore).permit(klass.editable_cols)
-  end
-
 end
