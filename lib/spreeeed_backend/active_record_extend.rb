@@ -14,8 +14,12 @@ module ActiveRecordExtension
       'fa-pencil'
     end
 
+    def protected_attributes
+      ['id', 'created_at', 'updated_at']
+    end
+
     def displayable_cols
-      self.new.attributes.keys - self.protected_attributes.to_a
+      self.new.attributes.keys - protected_attributes
     end
 
     def editable_cols
