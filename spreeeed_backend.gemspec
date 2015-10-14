@@ -24,7 +24,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'simple_form', '3.0.2'
   s.add_dependency "cocoon", '1.2.0'
   s.add_dependency "client_side_validations"
-  s.add_dependency "client_side_validations-simple_form"
+  s.add_dependency "client_side_validations-simple_form-3.0.2"
 
 
 
