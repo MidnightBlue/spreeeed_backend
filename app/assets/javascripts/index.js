@@ -4,8 +4,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require spreeeed_backend/bootstrap/dist/js/bootstrap.js
-//= require underscore
-//= require judge
 //= require cocoon
 //= require spreeeed_backend/jasny.bootstrap/extend/js/jasny-bootstrap.js
 //= require spreeeed_backend/jquery.gritter/js/jquery.gritter.js

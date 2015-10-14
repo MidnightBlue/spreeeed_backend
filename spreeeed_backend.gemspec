@@ -23,7 +23,6 @@ Gem::Specification.new do |s|
   s.add_dependency "i18n"
   s.add_dependency 'simple_form', '3.0.2'
   s.add_dependency "cocoon", '1.2.0'
-  s.add_dependency "judge-simple_form"                    
 
 
   # s.add_development_dependency "rails-assets-bootstrap"

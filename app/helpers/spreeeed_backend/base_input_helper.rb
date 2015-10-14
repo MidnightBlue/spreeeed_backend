@@ -1,7 +1,7 @@
 module SpreeeedBackend
   module BaseInputHelper
 
-    def bind_validators(klass, attr, html_options={:class => 'form-control', :validate => "true"})
+    def bind_validators(klass, attr, html_options={:class => 'form-control'})
       validators = klass.validators_on(attr.to_sym)
       return html_options if validators.empty?
 
