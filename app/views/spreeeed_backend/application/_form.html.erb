@@ -5,7 +5,7 @@
     objects_path = send("#{SpreeeedBackend.name_space}_#{klass_name.underscore.pluralize}_path")
   end
 %>
-<%= simple_form_for(object, :url => objects_path, :html => {:role => "form", :class => 'form-horizontal', :'parsley-validate' => '', :novalidate => ''}) do |f| %>
+<%= simple_form_for(object, :validate => true, :url => objects_path, :html => {:role => "form", :class => 'form-horizontal', :'parsley-validate' => '', :novalidate => ''}) do |f| %>
 <% Rails.logger.debug("==== #{object.inspect}") %>
 <% if object.errors.any? %>
   <div id="error_explanation">
