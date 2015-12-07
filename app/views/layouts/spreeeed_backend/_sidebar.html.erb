@@ -11,7 +11,7 @@
         <div class="avatar"><%# user_avatar(current_auth_user, {:width => 50, :height => 50}) %></div>
         <div class="info">
           <p><%= current_user_name %></p>
-          <p><%= link_to(t('sign_out'), send("destroy_#{SpreeeedBackend.devise_auth_resource}_session_path"), :method => :delete) %>
+          <!-- <p><%= link_to(t('sign_out'), send("destroy_#{SpreeeedBackend.devise_auth_resource}_session_path"), :method => :delete) %></p> -->
         </div>
       </div>
       <ul class="cl-vnavigation">
