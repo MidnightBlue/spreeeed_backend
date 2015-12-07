@@ -32,11 +32,11 @@
   <% editable_cols.each do |attr| %>
 <%= render_input(klass, attr, f) %>
   <% end %>
+<% end %>
 
   <% hidden_cols.each do |attr| %>
 <%= render_hidden_input(klass, attr, f) %>
   <% end %>
-<% end %>
 
 <% nested_cols.each do |attr, col_class| %>
 <%
