@@ -14,8 +14,12 @@ module ActiveRecordExtension
       'fa-pencil'
     end
 
+    def protected_attributes
+      ['id', 'created_at', 'updated_at']
+    end
+
     def displayable_cols
-      self.new.attributes.keys - self.protected_attributes.to_a
+      self.new.attributes.keys - protected_attributes
     end
 
     def editable_cols
@@ -38,7 +42,7 @@ module ActiveRecordExtension
     def nested_cols
       res = ActiveSupport::OrderedHash.new
       
-      cols = self.attr_accessible[:default].to_a.collect{ |attr| attr if attr.match(/attributes$/) }.compact
+      cols = self.nested_attributes_options.keys.compact
       cols.each do |col|
         self.reflect_on_all_associations.each do |r|
           name = r.name.to_s

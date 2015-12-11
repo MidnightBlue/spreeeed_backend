@@ -77,7 +77,7 @@ module SpreeeedBackend
     end
 
     def create
-      @object = @klass.new(params[@klass_name.underscore.to_sym])
+      @object = @klass.new(klass_params(@klass))
 
       respond_to do |format|
         if @object.save
@@ -94,7 +94,7 @@ module SpreeeedBackend
       @object = @klass.find(params[:id])
 
       respond_to do |format|
-        if @object.update_attributes(params[@klass_name.underscore.to_sym])
+        if @object.update_attributes(klass_params(@klass))
           format.html { redirect_to [SpreeeedBackend.name_space.to_sym, @object], notice: "#{@klass_name} was successfully updated." }
           format.json { head :no_content }
         else
@@ -244,6 +244,11 @@ module SpreeeedBackend
           "aaData"               => aaData,
           # "aoColumns"            => aoColumns,
       }
+    end
+
+    private
+    def klass_params(klass)
+      params.require(klass.name.underscore).permit(klass.editable_cols)
     end
 
   end
