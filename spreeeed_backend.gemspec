@@ -18,7 +18,7 @@ Gem::Specification.new do |s|
 
   s.add_dependency "rails", "~> 4.2.4"
   s.add_dependency "jquery-rails"
-  s.add_dependency "devise", "3.0.3"
+  s.add_dependency "devise", '~> 3.4.0'
   s.add_dependency "bootstrap-will_paginate", "0.0.10"
   s.add_dependency "i18n"
   s.add_dependency 'simple_form', '3.0.2'
