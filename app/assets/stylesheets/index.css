@@ -9,7 +9,7 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require spreeeed_backend/fonts/font-awesome-4/css/font-awesome.min.css
- *= require ../javascripts/spreeeed_backend/bootstrap/dist/css/bootstrap
+ *= require ../javascripts/spreeeed_backend/bootstrap/dist/css/bootstrap.css
  *= require ../javascripts/spreeeed_backend/jquery.gritter/css/jquery.gritter
  *= require ../javascripts/spreeeed_backend/jasny.bootstrap/extend/css/jasny-bootstrap.css
  *= require ../javascripts/spreeeed_backend/jquery.datatables/bootstrap-adapter/css/datatables
