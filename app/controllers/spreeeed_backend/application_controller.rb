@@ -248,7 +248,7 @@ module SpreeeedBackend
 
     private
     def klass_params(klass)
-      params.require(klass.name.underscore).permit(klass.editable_cols)
+      params[klass.name.underscore.to_sym]
     end
 
   end
