@@ -5,6 +5,7 @@ module SpreeeedBackend
   require 'cocoon'
 
   require 'spreeeed_backend/active_record_extend'
+  require 'spreeeed_backend/acts_as_option_tree'
 
   class << self
     mattr_accessor :name_space, :devise_auth_resource
