@@ -20,7 +20,7 @@ module ActsAsOptionTree
 
     def _to_option_tree
       res = {}
-      roots.sort_by{|n| n.name}.each do |node|
+      roots.each do |node|
         res.merge!(to_tree(node))
       end
       res
