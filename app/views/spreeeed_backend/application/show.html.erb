@@ -23,8 +23,8 @@
           </tbody>
         </table>
         <div class="content">
-          <%= link_to(edit_label, edit_object_path, :class => "btn btn-primary") %>
-          <%= link_to(destroy_label, object_path, :confirm => "#{t('destroy')}#{object_name(@object)}?", :method => :delete, :class => "btn btn-danger pull-right") %>
+          <%= link_to(edit_label, edit_object_path, :class => "btn btn-primary") if @editable %>
+          <%= link_to(destroy_label, object_path, :confirm => "#{t('destroy')}#{object_name(@object)}?", :method => :delete, :class => "btn btn-danger pull-right") if @deletable %>
         </div>
       </div>
     </div>
