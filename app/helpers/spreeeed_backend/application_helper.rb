@@ -11,6 +11,10 @@ module SpreeeedBackend
       self.output_buffer = render(:file => "layouts/#{layout}")
     end
 
+    def pluralize?(name)
+      !(name.pluralize == name && name.singularize == name)
+    end
+
     def current_auth_user
       send("current_#{SpreeeedBackend.devise_auth_resource}")
     end

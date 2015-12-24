@@ -169,12 +169,12 @@ module SpreeeedBackend
 
       end
 
-      Rails.logger.debug("==== #{sortable_cols.inspect}")
+      Rails.logger.debug("**** sortable_cols = #{sortable_cols.inspect}")
 
       res = attrs.collect { |attr|
         {'bSortable' => sortable_cols.include?(attr)}
       }
-      Rails.logger.debug("==== #{res}")
+      Rails.logger.debug("**** datatable sort options = #{res}")
       res
     end
 

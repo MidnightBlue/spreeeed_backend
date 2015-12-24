@@ -71,7 +71,7 @@ module SpreeeedBackend
       elsif object.respond_to?(:avatar) and object.avatar.present?
         object_image_tag(object.avatar, html_options)
       elsif object.respond_to?(:photos) and object.photos.count > 0
-        Rails.logger.info("==== #{object.class} #{object.id}")
+        Rails.logger.info("**** object_photo #{object.class} #{object.id}")
         object_image_tag(object.photos.first, html_options)
       end
     end

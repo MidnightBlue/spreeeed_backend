@@ -1,8 +1,8 @@
 <%
    klass_name_underscore = @klass_name.underscore
    new_object_path       = send("new_#{SpreeeedBackend.name_space}_#{klass_name_underscore}_path")
-   route_path            = (klass_name_underscore.pluralize == klass_name_underscore && klass_name_underscore.singularize == klass_name_underscore) ? "#{klass_name_underscore}_index" : klass_name_underscore.pluralize
-   objects_path         = send("#{SpreeeedBackend.name_space}_#{route_path}_path")
+   route_path            = pluralize?(klass_name_underscore) ? klass_name_underscore.pluralize : "#{klass_name_underscore}_index"
+   objects_path          = send("#{SpreeeedBackend.name_space}_#{route_path}_path")
 %>
 <div class="row">
   <div class="col-md-12">

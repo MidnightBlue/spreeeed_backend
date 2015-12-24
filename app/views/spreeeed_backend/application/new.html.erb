@@ -1,5 +1,7 @@
 <%
-  objects_path = send("#{SpreeeedBackend.name_space}_#{@klass_name.underscore.pluralize}_path")
+   klass_name_underscore = @klass_name.underscore
+   route_path            = pluralize?(klass_name_underscore) ? klass_name_underscore.pluralize : "#{klass_name_underscore}_index"
+  objects_path = send("#{SpreeeedBackend.name_space}_#{route_path}_path")
 
 %>
 <div class="row">
