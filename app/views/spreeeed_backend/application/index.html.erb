@@ -35,7 +35,7 @@
 <% if @klass_name %>
     <%
        klass_name_underscore  = @klass_name.underscore
-       objects_path_with_json = send("#{SpreeeedBackend.name_space}_#{klass_name_underscore.pluralize}_path", {:format => :json})
+       objects_path_with_json = send("#{objects_path}", {:format => :json})
     %>
     <script type="text/javascript">
         function build_datatable(id, path, placeholder) {
