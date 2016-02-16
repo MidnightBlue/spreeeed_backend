@@ -16,6 +16,9 @@ module SpreeeedBackend
       @nested_cols       = (@klass_name == 'NilClass' ? [] : @klass.nested_cols)
       @hidden_cols       = (@klass_name == 'NilClass' ? [] : @klass.hidden_cols)
       @default_sort_cols = []
+      @creatable         ||= true
+      @editable          ||= true
+      @deletable         ||= true
     end
 
     def index
@@ -77,7 +80,7 @@ module SpreeeedBackend
     end
 
     def create
-      @object = @klass.new(params[@klass_name.underscore.to_sym])
+      @object = @klass.new(klass_params(@klass))
 
       respond_to do |format|
         if @object.save
@@ -94,7 +97,7 @@ module SpreeeedBackend
       @object = @klass.find(params[:id])
 
       respond_to do |format|
-        if @object.update_attributes(params[@klass_name.underscore.to_sym])
+        if @object.update_attributes(klass_params(@klass))
           format.html { redirect_to [SpreeeedBackend.name_space.to_sym, @object], notice: "#{@klass_name} was successfully updated." }
           format.json { head :no_content }
         else
@@ -166,12 +169,12 @@ module SpreeeedBackend
 
       end
 
-      Rails.logger.debug("==== #{sortable_cols.inspect}")
+      Rails.logger.debug("**** sortable_cols = #{sortable_cols.inspect}")
 
       res = attrs.collect { |attr|
         {'bSortable' => sortable_cols.include?(attr)}
       }
-      Rails.logger.debug("==== #{res}")
+      Rails.logger.debug("**** datatable sort options = #{res}")
       res
     end
 
@@ -244,6 +247,11 @@ module SpreeeedBackend
           "aaData"               => aaData,
           # "aoColumns"            => aoColumns,
       }
+    end
+
+    private
+    def klass_params(klass)
+      params[klass.name.underscore.to_sym]
     end
 
   end

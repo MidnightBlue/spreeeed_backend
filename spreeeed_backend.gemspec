@@ -21,9 +21,8 @@ Gem::Specification.new do |s|
   s.add_dependency "devise", "3.0.3"
   s.add_dependency "bootstrap-will_paginate", "0.0.10"
   s.add_dependency "i18n"
-  s.add_dependency 'simple_form', '2.1.0'
+  s.add_dependency 'simple_form', '2.1.3'
   s.add_dependency "cocoon", '1.2.0'
-
 
 
   # s.add_development_dependency "rails-assets-bootstrap"

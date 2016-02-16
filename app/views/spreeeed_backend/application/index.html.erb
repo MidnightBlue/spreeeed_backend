@@ -1,7 +1,8 @@
 <%
    klass_name_underscore = @klass_name.underscore
    new_object_path       = send("new_#{SpreeeedBackend.name_space}_#{klass_name_underscore}_path")
-   objects_path         = send("#{SpreeeedBackend.name_space}_#{klass_name_underscore.pluralize}_path")
+   route_path            = pluralize?(klass_name_underscore) ? klass_name_underscore.pluralize : "#{klass_name_underscore}_index"
+   objects_path          = send("#{SpreeeedBackend.name_space}_#{route_path}_path")
 %>
 <div class="row">
   <div class="col-md-12">
@@ -17,6 +18,7 @@
 
             <%= render :partial => 'datatable', :locals => {:datatable_id => @datatable_id, :datatable_cols => @datatable_cols} %>
 
+<% if @creatable %>
             <div class="row">
               <div class="col-sm-12">
                 <div class="pull-left">
@@ -24,6 +26,7 @@
                 </div>
               </div>
             </div>
+<% end %>
           </div>
         </div>
       </div>
@@ -34,14 +37,14 @@
 <% if @klass_name %>
     <%
        klass_name_underscore  = @klass_name.underscore
-       objects_path_with_json = send("#{SpreeeedBackend.name_space}_#{klass_name_underscore.pluralize}_path", {:format => :json})
+       objects_path_with_json = send("#{SpreeeedBackend.name_space}_#{route_path}_path", {:format => :json})
     %>
     <script type="text/javascript">
         function build_datatable(id, path, placeholder) {
             $("#" + id).dataTable({
                 bProcessing: true,
                 oLanguage: {
-                    sProcessing: '<%= image_tag(image_path("spreeeed_backend/ajax-loader.gif")) %>',
+                    sProcessing: '<%= image_tag("spreeeed_backend/ajax-loader.gif") %>',
                     sLengthMenu:   "顯示 _MENU_ 項結果",
                     sZeroRecords:  "沒有匹配結果",
                     sInfo:         "顯示第 _START_ 至 _END_ 項結果，共 _TOTAL_ 項",

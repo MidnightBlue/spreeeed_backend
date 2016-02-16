@@ -214,7 +214,7 @@ module SpreeeedBackend
 
         c1 += content_tag :div, :class => "col-sm-6" do
           c2 = content_tag :div, :'data-date-format' => js_time_format, :'data-date' => default_datetime, :'data-start-view' => start_view, :'data-min-view' => min_view, :class => "input-group date datetime col-md-6 col-xs-7" do
-            c3 = form_object.input_field attr.to_sym, bind_validators(klass, attr, {:class => 'form-control', :as => :string})
+            c3 = form_object.input_field attr.to_sym, bind_validators(klass, attr, {:class => 'form-control', :as => :string, :value => default_datetime})
             c3 += content_tag :span, :class => 'input-group-addon btn-primary' do
               content_tag :span, :class => 'glyphicon glyphicon-th' do
               end

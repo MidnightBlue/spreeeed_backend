@@ -1,12 +1,15 @@
 <%
+   klass_name_underscore = @klass_name.underscore
+   route_path            = pluralize?(klass_name_underscore) ? klass_name_underscore.pluralize : "#{klass_name_underscore}_index"
+
   if object.id
     objects_path = send("#{SpreeeedBackend.name_space}_#{klass_name.underscore}_path", object)
   else
-    objects_path = send("#{SpreeeedBackend.name_space}_#{klass_name.underscore.pluralize}_path")
+    objects_path = send("#{SpreeeedBackend.name_space}_#{route_path}_path")
   end
 %>
 <%= simple_form_for(object, :url => objects_path, :html => {:role => "form", :class => 'form-horizontal', :'parsley-validate' => '', :novalidate => ''}) do |f| %>
-<% Rails.logger.debug("==== #{object.inspect}") %>
+<% Rails.logger.debug("**** #{object.inspect}") %>
 <% if object.errors.any? %>
   <div id="error_explanation">
     <h2><%= pluralize(object.errors.count, "error") %> prohibited this <%= klass.model_name.human %> from being saved:</h2>
