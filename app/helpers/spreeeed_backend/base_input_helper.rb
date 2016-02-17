@@ -201,7 +201,7 @@ module SpreeeedBackend
       render_select_input(klass, attr, form_object, collection)
     end
 
-    def render_datetime_input(klass, attr, form_object, time_format="%Y-%m-%d %H:%M:%S", js_time_format="yyyy-mm-dd hh:ii:ss", start_view='1', min_view='0')
+    def render_datetime_input(klass, attr, form_object, time_format="%Y-%m-%d %H:%M:%S", js_time_format="yyyy-mm-dd hh:ii:ss", start_view='2', min_view='0')
       name = [klass.name.underscore, attr].join('_')
 
       content_tag :div, :class => "form-group" do
