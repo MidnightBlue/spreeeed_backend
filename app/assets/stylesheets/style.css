@@ -5458,6 +5458,7 @@ body.modal-open,
     border-radius: 15px;
     -webkit-border-radius: 15px;
     margin-right: 5px;
+    display: auto;
 }
 .has-switch:last-child {
     margin-right: 0;
@@ -7226,6 +7227,7 @@ ul.timeline li > .date {
 .fuelux .icon-arrow-right {
     background-position: -264px -95px;
 }
+
 @media (max-width: 767px) {
     .wizard-row .fuelux {
         position: static;
