@@ -16,7 +16,8 @@
  *= require ../javascripts/spreeeed_backend/bootstrap.datetimepicker/css/bootstrap-datetimepicker.css
  *= require ../javascripts/spreeeed_backend/bootstrap.daterangepicker/daterangepicker-bs3
  *= require ../javascripts/spreeeed_backend/bootstrap.switch/bootstrap-switch.css
- *= require ../javascripts/spreeeed_backend/jquery.icheck/skins/flat/grey.css
+ * require ../javascripts/spreeeed_backend/jquery.icheck/skins/flat/grey.css
+ *= require ../javascripts/spreeeed_backend/jquery.icheck/skins/flat/green.css
  *= require ../javascripts/spreeeed_backend/jquery.select2/select2.css
  *= require ../javascripts/spreeeed_backend/jquery.select2/select2-bootstrap.css
  *= require ../javascripts/spreeeed_backend/bootstrap.switch/bootstrap-switch.css
