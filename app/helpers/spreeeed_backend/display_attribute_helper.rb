@@ -4,9 +4,7 @@ module SpreeeedBackend
     def display_attribute(object, attr)
       if association = detect_association(object, attr)
         association_object = object.send(association.to_sym)
-        if association_object.present? and association_object.respond_to?(:name)
-          return association_object.name
-        end
+        return association_object.name if association_object.present? and association_object.respond_to?(:name)
       end
 
       if attr.to_s == 'aasm_state'
