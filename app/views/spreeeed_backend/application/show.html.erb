@@ -17,7 +17,7 @@
 <% @displayable_cols.each do |attr| %>
             <tr>
               <td><%= @klass.human_attribute_name(attr.to_sym) %></td>
-              <td class="text-right"><%# display_attribute(@object, attr) %></td>
+              <td class="text-right"><%= display_attribute(@object, attr) %></td>
             </tr>
 <% end %>
           </tbody>
